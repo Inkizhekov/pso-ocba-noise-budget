@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-23T16:00:36.947632+00:00",
+  "status": "post_hoc_sensitivity_of_existing_observations_no_new_searches",
+  "inputs": {
+    "results\\ocba_instances_20261022\\runs.csv": "295894171191d4562dfd7e2f923bd58c4163255f575aa93ff1396daf7b6668e5",
+    "results\\ocba_instances_20261022\\protocol.json": "c4ba75aefa90b9eea5e3b3954ee12a0fd114a481245136cb329bcd30bc811b35",
+    "results\\ocba_robustness_20261022\\synthetic_runs.csv": "4864bdc8f7350d146fcb90dfcfb935bafaf08cc21202ff89ddb485c122b76188",
+    "results\\ocba_mean_analysis_20261022\\mean_contrasts.csv": "c86b78b3c23d3f3d059ddff2a1cc42aaaf4f6e4036c4d2a4f0ffacb766ae1324"
+  },
+  "source_sha256": "f840b03f5dba451539247089bc4cbdccfb03e05bc95e45181f0195cbfd1a22d9",
+  "repetitions": 99999,
+  "fixed_validation": "16 fixed instances, 30 independent paired seeds per instance",
+  "lofo_family": "40 contrasts: 8 excluded whole function families x 5 original contrasts, jointly corrected",
+  "hierarchical": "resample 8 families, 2 instances per draw, 30 full seed vectors; exchangeability sensitivity only",
+  "mde": "conditional empirical location-shift simulation; fixed 23-family critical; target rejection probability .90; not prospective power or equivalence",
+  "threshold": "compare existing simultaneous lower bounds of five mean contrasts to .02; cell counts remain descriptive",
+  "new_primary_claims": false
+}

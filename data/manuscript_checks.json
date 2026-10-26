@@ -1,0 +1,37 @@
+{
+  "scope": "English translation fidelity and layout, not a new optimizer or statistical audit",
+  "source_version": "2026-10-25",
+  "translation_version": "2026-10-26",
+  "documents": {
+    "main": {
+      "source_sha256": "6820b8d6a35afe9c8e7387047a6037e365ef1ca1722511a6e2adeb080427fb57",
+      "output_sha256": "58900ecde1056bec3168c468b6d0434c38529b200c70fea29e1c1705a16522d1",
+      "pages": 20,
+      "table_cells": 343,
+      "table_numeric_mismatches": [],
+      "native_equations": 71,
+      "all_visible_text_in_English": true,
+      "changed_pages_in_final_layout_pass": [
+        5,
+        14
+      ],
+      "visual_review": "All pages inspected; changed pages inspected again after final render"
+    },
+    "supplement": {
+      "source_sha256": "298e692445b45f03ea374fed578d3da6f8f7b888d21bdc419d4b4d17f6f9bb4c",
+      "output_sha256": "4ecd734a5664641f9e2de5a54c2757df52b42d8be1956e9d5dd3485ff7b3eb81",
+      "pages": 15,
+      "table_cells": 632,
+      "table_numeric_mismatches": [],
+      "native_equations": 85,
+      "all_visible_text_in_English": true,
+      "changed_pages_in_final_layout_pass": [
+        9,
+        10,
+        11
+      ],
+      "visual_review": "All pages inspected; changed pages inspected again after final render"
+    }
+  },
+  "new_searches": 0
+}

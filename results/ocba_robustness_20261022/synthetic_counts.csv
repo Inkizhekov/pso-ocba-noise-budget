@@ -1,0 +1,13 @@
+noise,baseline,comparisons,wins,losses
+contaminated,pso,144,94,0
+contaminated,pso_ea,144,56,0
+contaminated,pso_ocba_rs,144,0,2
+gaussian,pso,216,40,77
+gaussian,pso_ea,216,1,0
+gaussian,pso_ocba_rs,216,0,3
+lognormal,pso,144,90,0
+lognormal,pso_ea,144,58,0
+lognormal,pso_ocba_rs,144,0,4
+student_t3,pso,144,84,0
+student_t3,pso_ea,144,37,0
+student_t3,pso_ocba_rs,144,0,2

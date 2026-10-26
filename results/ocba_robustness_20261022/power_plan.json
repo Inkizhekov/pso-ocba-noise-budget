@@ -1,0 +1,268 @@
+{
+  "protocol_sha256": "dc64b38513addf78c03ac9d994547a33033e07f35bf25297e817ec4edadfabef",
+  "pilot_runs_sha256": "2a2f40530f6b02d14350bc2475347937aa2be6e93091f6ae1c331fdbc5bab49b",
+  "planner_sha256": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+  "runs_per_cell": 456,
+  "pilot_searches": 432,
+  "main_searches": 8208,
+  "main_search_calls": 4432320,
+  "main_final_refits": 24624,
+  "family_size": 12,
+  "conservative_per_test_alpha": 0.004166666666666667,
+  "delta_accuracy": 0.01,
+  "target_marginal_power": 0.9,
+  "worst_upper_sd": 0.04953571643247029,
+  "pilot_contrasts": [
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7101,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.00927844581693181,
+      "upper_sd_normal_model_95": 0.012298745115486657
+    },
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7101,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.008855673566638998,
+      "upper_sd_normal_model_95": 0.011738352971064842
+    },
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7102,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.009181105425080494,
+      "upper_sd_normal_model_95": 0.012169718693126537
+    },
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7102,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.007942905601927229,
+      "upper_sd_normal_model_95": 0.01052846278373563
+    },
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7103,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.012874406702910544,
+      "upper_sd_normal_model_95": 0.017065255289120087
+    },
+    {
+      "dataset": "ionosphere",
+      "split_seed": 7103,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.013385324137090286,
+      "upper_sd_normal_model_95": 0.017742485444041976
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7101,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.025413713616543394,
+      "upper_sd_normal_model_95": 0.03368632984173592
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7101,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.03174423447868538,
+      "upper_sd_normal_model_95": 0.042077547947431654
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7102,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.02861349241108127,
+      "upper_sd_normal_model_95": 0.03792769359989318
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7102,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.016097872492647426,
+      "upper_sd_normal_model_95": 0.021338016581115695
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7103,
+      "baseline": "pso",
+      "n": 24,
+      "pilot_sd": 0.037370842033535995,
+      "upper_sd_normal_model_95": 0.04953571643247029
+    },
+    {
+      "dataset": "sonar",
+      "split_seed": 7103,
+      "baseline": "pso_ea",
+      "n": 24,
+      "pilot_sd": 0.03625494955235581,
+      "upper_sd_normal_model_95": 0.04805658108231513
+    }
+  ],
+  "normal_model_initial_n": 432,
+  "monte_carlo_checks": [
+    {
+      "n": 432,
+      "models": [
+        {
+          "model": "normal_upper_sd",
+          "power": 0.9005,
+          "power_lower_95_wilson": 0.8944785166197612
+        },
+        {
+          "model": "student_t3_upper_sd",
+          "power": 0.9021,
+          "power_lower_95_wilson": 0.8961200570439245
+        },
+        {
+          "model": "centered_pilot_0",
+          "power": 0.9229,
+          "power_lower_95_wilson": 0.9175078841439833
+        },
+        {
+          "model": "centered_pilot_1",
+          "power": 0.918,
+          "power_lower_95_wilson": 0.9124606760579442
+        },
+        {
+          "model": "centered_pilot_2",
+          "power": 0.9196,
+          "power_lower_95_wilson": 0.9141080953920695
+        },
+        {
+          "model": "centered_pilot_3",
+          "power": 0.9275,
+          "power_lower_95_wilson": 0.922251704711425
+        },
+        {
+          "model": "centered_pilot_4",
+          "power": 0.9186,
+          "power_lower_95_wilson": 0.9130783863913063
+        },
+        {
+          "model": "centered_pilot_5",
+          "power": 0.9071,
+          "power_lower_95_wilson": 0.9012529956575828
+        },
+        {
+          "model": "centered_pilot_6",
+          "power": 0.9097,
+          "power_lower_95_wilson": 0.9039240776010261
+        },
+        {
+          "model": "centered_pilot_7",
+          "power": 0.9125,
+          "power_lower_95_wilson": 0.9068021999594023
+        },
+        {
+          "model": "centered_pilot_8",
+          "power": 0.9034,
+          "power_lower_95_wilson": 0.8974541595272557
+        },
+        {
+          "model": "centered_pilot_9",
+          "power": 0.9257,
+          "power_lower_95_wilson": 0.9203947480010474
+        },
+        {
+          "model": "centered_pilot_10",
+          "power": 0.9219,
+          "power_lower_95_wilson": 0.9164773562078712
+        },
+        {
+          "model": "centered_pilot_11",
+          "power": 0.9227,
+          "power_lower_95_wilson": 0.9173017580919753
+        }
+      ]
+    },
+    {
+      "n": 456,
+      "models": [
+        {
+          "model": "normal_upper_sd",
+          "power": 0.9199,
+          "power_lower_95_wilson": 0.9144170553402478
+        },
+        {
+          "model": "student_t3_upper_sd",
+          "power": 0.9184,
+          "power_lower_95_wilson": 0.9128724734222167
+        },
+        {
+          "model": "centered_pilot_0",
+          "power": 0.9384,
+          "power_lower_95_wilson": 0.9335172585700082
+        },
+        {
+          "model": "centered_pilot_1",
+          "power": 0.9383,
+          "power_lower_95_wilson": 0.933413729229975
+        },
+        {
+          "model": "centered_pilot_2",
+          "power": 0.9361,
+          "power_lower_95_wilson": 0.9311369577078954
+        },
+        {
+          "model": "centered_pilot_3",
+          "power": 0.943,
+          "power_lower_95_wilson": 0.9382835457662696
+        },
+        {
+          "model": "centered_pilot_4",
+          "power": 0.935,
+          "power_lower_95_wilson": 0.9299991833966851
+        },
+        {
+          "model": "centered_pilot_5",
+          "power": 0.9285,
+          "power_lower_95_wilson": 0.9232837379479708
+        },
+        {
+          "model": "centered_pilot_6",
+          "power": 0.9238,
+          "power_lower_95_wilson": 0.9184355794386516
+        },
+        {
+          "model": "centered_pilot_7",
+          "power": 0.9236,
+          "power_lower_95_wilson": 0.9182294067217149
+        },
+        {
+          "model": "centered_pilot_8",
+          "power": 0.9248,
+          "power_lower_95_wilson": 0.9194666008765828
+        },
+        {
+          "model": "centered_pilot_9",
+          "power": 0.9332,
+          "power_lower_95_wilson": 0.9281382183233846
+        },
+        {
+          "model": "centered_pilot_10",
+          "power": 0.9393,
+          "power_lower_95_wilson": 0.9344491818559507
+        },
+        {
+          "model": "centered_pilot_11",
+          "power": 0.9388,
+          "power_lower_95_wilson": 0.9339314111788571
+        }
+      ]
+    }
+  ],
+  "main_data_used_in_planning": false,
+  "limitations": "Model-based planning conditional on pilot variance; not guaranteed achieved power or a guarantee of significance; 90% marginal, not joint power."
+}

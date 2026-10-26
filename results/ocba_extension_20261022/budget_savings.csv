@@ -1,0 +1,6 @@
+method,both_reached,method_only,pso_only,neither,smaller_budget,equal_budget,larger_budget,conditional_mean_saving
+random,14,0,4,46,1,10,3,-1.238095238095238
+pso_r3,16,3,2,43,1,13,2,-0.20833333333333331
+pso_ea,16,3,2,43,1,11,4,-0.4583333333333333
+pso_ocba_rs,17,6,1,40,1,12,4,-0.4313725490196078
+pso_ocba,16,6,2,40,1,10,5,-0.5833333333333333

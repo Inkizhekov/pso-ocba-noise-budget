@@ -1,0 +1,134 @@
+{
+  "created_utc": "2026-10-22T04:50:42.187962+00:00",
+  "source_sha256": {
+    "run_robust_ocba_study.py": "bcd8a937bf4b9e935b85b199157dec9fa4d1437a9576f08bcdf75c44763e95fa",
+    "robust_ocba_engine.py": "d042b46d3fbadc565753e27b73bfcd1474bc5aca703684379097da07afec8808",
+    "plan_robust_nn_power.py": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+    "ocba.py": "f822ec9ffa2d345545c214cefc02d6f775d4ed7fe10a1ee21fdde105d918ffb7",
+    "ocba_engine.py": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+    "ocba_benchmarks.py": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+    "experiment.py": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+    "run_ocba_study.py": "576a9cfd3d7d86f317373d1af5f39d2646075e3987459f7c87ee880d8e2bf249",
+    "study_statistics.py": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d"
+  },
+  "synthetic": {
+    "functions": [
+      "sphere",
+      "ellipsoid",
+      "rosenbrock",
+      "ackley",
+      "rastrigin",
+      "griewank",
+      "levy",
+      "zakharov"
+    ],
+    "dimension": 8,
+    "swarms": [
+      6,
+      12,
+      24
+    ],
+    "budgets": [
+      540,
+      2160,
+      8640
+    ],
+    "methods": [
+      "pso",
+      "pso_ea",
+      "pso_ocba_rs",
+      "pso_ocba"
+    ],
+    "runs": 30,
+    "noise_conditions": [
+      [
+        "gaussian",
+        0
+      ],
+      [
+        "gaussian",
+        1
+      ],
+      [
+        "gaussian",
+        2
+      ],
+      [
+        "student_t3",
+        1
+      ],
+      [
+        "student_t3",
+        2
+      ],
+      [
+        "lognormal",
+        1
+      ],
+      [
+        "lognormal",
+        2
+      ],
+      [
+        "contaminated",
+        1
+      ],
+      [
+        "contaminated",
+        2
+      ]
+    ],
+    "noise_distributions": {
+      "gaussian": "N(0,1)",
+      "student_t3": "t(df=3)/sqrt(3)",
+      "lognormal": "(exp(N(0,1))-exp(1/2))/sqrt(e*(e-1))",
+      "contaminated": "(.95*N(0,1)+.05*N(0,100))/sqrt(5.95)"
+    },
+    "heteroskedastic_factor": "eta*(0.6+0.8*x[0])",
+    "primary_family": "1296 two-sided OCBA-vs-PSO/EA comparisons, one global Holm",
+    "secondary_family": "648 OCBA-vs-OCBA-RS comparisons, separate global Holm",
+    "practical_delta": 0.02
+  },
+  "nn": {
+    "datasets": [
+      "ionosphere",
+      "sonar"
+    ],
+    "split_seeds": [
+      7101,
+      7102,
+      7103
+    ],
+    "methods": [
+      "pso",
+      "pso_ea",
+      "pso_ocba"
+    ],
+    "swarm_size": 12,
+    "budget": 540,
+    "epochs": 20,
+    "final_refits": 3,
+    "pilot_runs_per_cell": 24,
+    "practical_delta_accuracy": 0.01,
+    "target_power": 0.9,
+    "global_primary_family_size": 12,
+    "contrasts": [
+      "pso_ocba-pso",
+      "pso_ocba-pso_ea"
+    ],
+    "primary_test": "two-sided paired Student t test on mean test accuracy",
+    "power_rule": "worst 95% upper variance bound across 12 pilot contrasts; noncentral t at alpha=.05/12; MC normal, t3 and centered pilot distributions; min 48, multiples 24, max 1536",
+    "pilot_is_confirmatory_data": false,
+    "main_seeds_disjoint_from_pilot_and_historical": true,
+    "scope": "conditional on each fixed dataset/split; splits are not independent datasets"
+  },
+  "engine": {
+    "n0": 3,
+    "generation_budget": "6*M",
+    "allocation_increment": "M",
+    "historical_default_equivalence_required": true
+  },
+  "historical_primary_family_384_unchanged": true,
+  "seed_pairing": "shared search seed within each condition; paired final seeds across methods",
+  "raw_archives": "all evaluations and pool coordinates, plus selected-mean reconstruction per search"
+}

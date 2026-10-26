@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-22T15:03:50.448811+00:00",
+  "smoke": false,
+  "status": "new observations; design fixed before validation; question selected after original analysis",
+  "source_sha256": {
+    "run_robust_ocba_study.py": "9e1956ea75fd48a2b125e985c93e7f4d84f2933f8eebf32dd50f423da200beab",
+    "robust_ocba_engine.py": "fc2c30f385e9b2290473fde7904e50f0e4fe5891e68c5318057343523ceb535d",
+    "plan_robust_nn_power.py": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+    "ocba.py": "f822ec9ffa2d345545c214cefc02d6f775d4ed7fe10a1ee21fdde105d918ffb7",
+    "ocba_engine.py": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+    "ocba_benchmarks.py": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+    "experiment.py": "4f2cf48e75b001bd616acb59e7ae98d4fa55175a7ef723ca7c739527d247291e",
+    "run_ocba_study.py": "fb4b7847d2eb82854c157781e5a8b854a34c4a6a9b35adca8f3e88e234782e67",
+    "study_statistics.py": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d",
+    "analyze_robust_ocba_study.py": "a94e486066bad736736d2e702cc08b93f1a00a9e626d280a6ac6ff0b4605f9b6",
+    "validate_robust_power.py": "6f3921c8fa53b619d466a51ff0ade70caba7dfd5367d65ea6525958a4cf01acb",
+    "record_runtime_environment.py": "ac9c3f6934fabb3e483606e04423cdf0546ebf3050a38dc07f31cde360d5e8e8",
+    "historical/__init__.py": "3358464bf14f05788b79a04392f06a9073f33c2d29d2dc6a4bab9b8ab575799e",
+    "historical/ocba_20261022/__init__.py": "51da8c87cabebc450b65a12c0064fd69beca174a13e92818478524ae74ace2b6",
+    "historical/ocba_20261022/experiment.py": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+    "run_ocba_instance_validation.py": "1cda568d0650794a06c2182a52f5cd8c623bc3675b1d86f10db0f7fca90d15c7",
+    "paired_mean_inference.py": "5234b88e963658a1480bc705f84fc609a6645d1fb750d3c917b8ca28c0bd796b"
+  },
+  "functions": [
+    "sphere",
+    "ellipsoid",
+    "rosenbrock",
+    "ackley",
+    "rastrigin",
+    "griewank",
+    "levy",
+    "zakharov"
+  ],
+  "instances": [
+    101,
+    102
+  ],
+  "noises": [
+    "gaussian",
+    "lognormal"
+  ],
+  "methods": [
+    "pso_ea",
+    "pso_ocba_rs",
+    "pso_ocba"
+  ],
+  "dimension": 8,
+  "eta": 2,
+  "swarm": 12,
+  "budget": 8640,
+  "initial_repeats": 3,
+  "generation_multiplier": 6,
+  "runs_per_cell": 30,
+  "searches": 2880,
+  "calls": 24883200,
+  "rationale": "validate the previously strongest lognormal-vs-Gaussian mean interaction on new transformations; not a full new grid",
+  "contrasts": [
+    "ocba_ea_gaussian",
+    "ocba_ea_lognormal",
+    "noise_interaction",
+    "ocba_rs_gaussian",
+    "ocba_rs_lognormal"
+  ],
+  "bootstrap_repetitions": 99999,
+  "bootstrap_seed": 12222026,
+  "inference": "one joint max-t family of five means; 16 fixed function-instance strata with 30 paired seeds each; equal weights; no inference to a population of functions",
+  "planned_power": null,
+  "original_primary_families_unchanged": true,
+  "new_search_seed_formula": "912700001 + function_index*1000003 + instance*9000011 + run*10003"
+}

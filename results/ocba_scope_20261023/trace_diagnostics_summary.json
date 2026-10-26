@@ -1,0 +1,59 @@
+{
+  "searches": 2880,
+  "calls_replayed": 24883200,
+  "new_objective_calls": 0,
+  "generation_records": 345600,
+  "all_final_selections_and_pbest_counts_match": true,
+  "source_sha256": "d5b483dadceb1b39ec5eaa577e19942146a8d35d9a42c9fcaa4570726748ec50",
+  "means": [
+    {
+      "noise": "gaussian",
+      "method": "pso_ea",
+      "pbest_error_rate": 0.4098155929038282,
+      "gbest_error_rate": 0.8961458333333333,
+      "oracle_best_candidate_allocation_share": 0.07559751157407407,
+      "final_regret": 1.0957523611767985
+    },
+    {
+      "noise": "gaussian",
+      "method": "pso_ocba",
+      "pbest_error_rate": 0.3822712418300654,
+      "gbest_error_rate": 0.8635243055555556,
+      "oracle_best_candidate_allocation_share": 0.11518132716049383,
+      "final_regret": 0.9648762127903966
+    },
+    {
+      "noise": "gaussian",
+      "method": "pso_ocba_rs",
+      "pbest_error_rate": 0.3789317810457516,
+      "gbest_error_rate": 0.8491840277777778,
+      "oracle_best_candidate_allocation_share": 0.12097173996913581,
+      "final_regret": 0.8425295978921575
+    },
+    {
+      "noise": "lognormal",
+      "method": "pso_ea",
+      "pbest_error_rate": 0.4227751517273576,
+      "gbest_error_rate": 0.9479687499999999,
+      "oracle_best_candidate_allocation_share": 0.07987702546296296,
+      "final_regret": 2.1130669312963644
+    },
+    {
+      "noise": "lognormal",
+      "method": "pso_ocba",
+      "pbest_error_rate": 0.3536516690009337,
+      "gbest_error_rate": 0.8333680555555555,
+      "oracle_best_candidate_allocation_share": 0.09878520447530864,
+      "final_regret": 0.8154088782955637
+    },
+    {
+      "noise": "lognormal",
+      "method": "pso_ocba_rs",
+      "pbest_error_rate": 0.3619893790849673,
+      "gbest_error_rate": 0.8105902777777777,
+      "oracle_best_candidate_allocation_share": 0.10622395833333333,
+      "final_regret": 0.5958809272919762
+    }
+  ],
+  "scope": "descriptive diagnostics only; gbest error compares retained personal records, not all visited points; oracle labels never used by search; correlations are not causal"
+}

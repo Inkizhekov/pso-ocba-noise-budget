@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-22T03:21:37.508252+00:00",
+  "source_sha256": {
+    "ocba.py": "f822ec9ffa2d345545c214cefc02d6f775d4ed7fe10a1ee21fdde105d918ffb7",
+    "ocba_engine.py": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+    "ocba_benchmarks.py": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+    "run_ocba_study.py": "576a9cfd3d7d86f317373d1af5f39d2646075e3987459f7c87ee880d8e2bf249",
+    "experiment.py": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+    "study_statistics.py": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d"
+  },
+  "synthetic": {
+    "functions": [
+      "sphere",
+      "ellipsoid",
+      "rosenbrock",
+      "ackley",
+      "rastrigin",
+      "griewank",
+      "levy",
+      "zakharov"
+    ],
+    "dimensions": [
+      3,
+      8
+    ],
+    "eta": [
+      0.0,
+      0.25,
+      1.0,
+      2.0
+    ],
+    "budgets": [
+      60,
+      180,
+      540
+    ],
+    "methods": [
+      "random",
+      "pso",
+      "pso_r3",
+      "pso_ea",
+      "pso_ocba_rs",
+      "pso_ocba"
+    ],
+    "runs": 30,
+    "validation_functions": [
+      "levy",
+      "zakharov"
+    ],
+    "calibration_size": 4096,
+    "practical_delta": 0.02,
+    "target_regret": 0.1,
+    "target_success_rate": 0.8,
+    "noise": "heteroskedastic Gaussian, std=eta*(0.6+0.8*x0)",
+    "sampling": "common run seed across methods, eta and budgets; different task seeds"
+  },
+  "real": {
+    "datasets": [
+      "digits",
+      "wine",
+      "breast_cancer",
+      "ionosphere",
+      "sonar"
+    ],
+    "split_seeds": [
+      4101,
+      4102,
+      4103
+    ],
+    "budgets": [
+      60,
+      180
+    ],
+    "methods": [
+      "pso",
+      "pso_r3",
+      "pso_ea",
+      "pso_ocba"
+    ],
+    "runs": 6,
+    "epochs": 20,
+    "final_refits": 3,
+    "final_seed_panel": "per run, paired across methods"
+  },
+  "ocba": {
+    "implementation": "numerical Gaussian max-min PSO selection model",
+    "reference": "10.1109/TEVC.2016.2592185; models (4),(6)",
+    "swarm_size": 6,
+    "n0": 3,
+    "generation_budget": 36,
+    "increment": 6,
+    "variance_floor": "max(1e-12, max_variance*1e-8)",
+    "gap_floor": "1e-6*max(1, range_of_sample_means)",
+    "initialization": "no personal thresholds before first generation",
+    "tail": "round-robin initial samples; allocate only after >=2 per current pool",
+    "global_samples": "reused; cumulative counts never decrease",
+    "deviations_from_published_experiment": "small n0, swarm and total budgets; fixed coefficients; no reproduction claim for its tables"
+  },
+  "inference": {
+    "bootstrap_repeats": 4000,
+    "confidence": 0.95,
+    "primary_comparisons": [
+      "pso_ocba vs pso",
+      "pso_ocba vs pso_ea"
+    ],
+    "primary_global_holm_family": "all 384 synthetic primary comparisons",
+    "secondary_holm_family": "five alternatives vs pso inside each synthetic cell",
+    "pointwise_intervals": true,
+    "real_inference": "within each dataset/split/budget; no independent-task claim for overlapping splits"
+  },
+  "router": {
+    "algorithm": "DecisionTreeClassifier(max_depth=2,min_samples_leaf=12,random_state=20261022)",
+    "features": [
+      "eta",
+      "log_budget",
+      "dimension"
+    ],
+    "label": "cell mean(pso_ocba - pso) >= 0.02",
+    "training": "first six functions, both dimensions, all conditions",
+    "validation": "Levy and Zakharov only, not used in training or hyperparameter selection",
+    "interpretation": "known-noise synthetic policy; not directly applicable when eta is unknown"
+  },
+  "timing": "concurrent workers; no speed superiority claims",
+  "python": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "win32",
+  "smoke": false
+}

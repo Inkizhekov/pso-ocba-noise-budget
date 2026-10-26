@@ -1,0 +1,53 @@
+{
+  "searches": 2880,
+  "calls": 24883200,
+  "audited_cells": 32,
+  "fixed_function_instance_strata": 16,
+  "family": 5,
+  "contrasts": [
+    {
+      "id": "ocba_ea_gaussian",
+      "mean": 0.13087614838640196,
+      "se": 0.034791055202532936,
+      "ci_low": 0.0397781521827372,
+      "ci_high": 0.22197414459006673,
+      "adjusted_p_zero": 0.00211
+    },
+    {
+      "id": "ocba_ea_lognormal",
+      "mean": 1.2976580530007993,
+      "se": 0.07228923994066858,
+      "ci_low": 1.1083736272383582,
+      "ci_high": 1.4869424787632404,
+      "adjusted_p_zero": 1e-05
+    },
+    {
+      "id": "noise_interaction",
+      "mean": 1.1667819046143975,
+      "se": 0.0781546082539195,
+      "ci_low": 0.9621394134750049,
+      "ci_high": 1.37142439575379,
+      "adjusted_p_zero": 1e-05
+    },
+    {
+      "id": "ocba_rs_gaussian",
+      "mean": -0.12234661489823909,
+      "se": 0.03810168459253889,
+      "ci_low": -0.22211326750932853,
+      "ci_high": -0.022579962287149632,
+      "adjusted_p_zero": 0.01068
+    },
+    {
+      "id": "ocba_rs_lognormal",
+      "mean": -0.21952795100358738,
+      "se": 0.03294357410865402,
+      "ci_low": -0.30578844444406283,
+      "ci_high": -0.1332674575631119,
+      "adjusted_p_zero": 1e-05
+    }
+  ],
+  "summed_worker_elapsed_hours": 0.24031858338888115,
+  "critical_max_abs_t": 2.6184315386051424,
+  "bootstrap_repetitions": 99999,
+  "scope": "conditional on 16 new fixed instances of the same eight function families"
+}

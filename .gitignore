@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.review_venv/
+.pytest_cache/
+.env
+.env.*
+reviewer_checks/
+releases/
+results/my_*/
+results/ocba_current/
+results/ocba_robustness_20261022/synthetic_runs.csv
+*.tmp

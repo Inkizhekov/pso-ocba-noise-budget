@@ -1,0 +1,22 @@
+{
+  "ionosphere": {
+    "url": "https://archive.ics.uci.edu/static/public/52/ionosphere.zip",
+    "member": "ionosphere.data",
+    "rows": 351,
+    "features": 34,
+    "doi": "10.24432/C5W01B",
+    "citation": "Sigillito, Wing, Hutton and Baker (1989). Ionosphere. UCI.",
+    "license": "CC BY 4.0",
+    "sha256": "46d52186b84e20be52918adb93e8fb9926b34795ff7504c24350ae0616a04bbd"
+  },
+  "sonar": {
+    "url": "https://archive.ics.uci.edu/static/public/151/connectionist%2Bbench%2Bsonar%2Bmines%2Bvs%2Brocks.zip",
+    "member": "sonar.all-data",
+    "rows": 208,
+    "features": 60,
+    "doi": "10.24432/C5T01Q",
+    "citation": "Sejnowski and Gorman (1988). Sonar, Mines vs. Rocks. UCI.",
+    "license": "CC BY 4.0",
+    "sha256": "e90434cdbf00fcf93ffa911fe447ae25606979658e60f1d32e155c3b5240234d"
+  }
+}

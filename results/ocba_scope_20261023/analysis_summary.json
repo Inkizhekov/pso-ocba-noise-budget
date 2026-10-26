@@ -1,0 +1,123 @@
+{
+  "status": "post_hoc_sensitivity_of_existing_observations_no_new_searches",
+  "searches_added": 0,
+  "per_instance_interaction_range": [
+    0.0775813965688392,
+    5.499180108374947
+  ],
+  "lofo_interaction_mean_range": [
+    0.6722820858620544,
+    1.3209773543826406
+  ],
+  "lofo_interaction_lowest_joint_lower": 0.5244559484901272,
+  "lofo_joint_family_size": 40,
+  "lofo_critical": 3.105851470388333,
+  "hierarchical": {
+    "mean": [
+      0.13087614838640196,
+      1.2976580530007993,
+      1.1667819046143975,
+      -0.12234661489823909,
+      -0.21952795100358738
+    ],
+    "se": [
+      0.062360624315426,
+      0.587191510382416,
+      0.5578075058262004,
+      0.07025873521757355,
+      0.10049974047149633
+    ],
+    "ci_low": [
+      -0.33691316229112067,
+      -3.1070751403058674,
+      -3.0175313780965856,
+      -0.649382475704611,
+      -0.9734123906563471
+    ],
+    "ci_high": [
+      0.5986654590639247,
+      5.702391246307466,
+      5.351095187325381,
+      0.40468924590813293,
+      0.5343564886491724
+    ],
+    "critical": 7.501357079290925,
+    "repetitions": 99999,
+    "seed": 14232026,
+    "family_size": 5,
+    "scope": "exploratory exchangeability scenario, eight selected families; not a probability sample or a population CI"
+  },
+  "swarm_mde90": [
+    {
+      "id": "shape_swarm_student_t3_12",
+      "kind": "shape_swarm",
+      "noise": "student_t3",
+      "swarm": 12,
+      "se": 0.06305935107480712,
+      "mean": 0.13601588698880268,
+      "mde90_positive": 0.28011660508030756,
+      "mde90_negative": 0.2784914589296509,
+      "normal_location_approximation": 0.2827353505087724
+    },
+    {
+      "id": "shape_swarm_student_t3_24",
+      "kind": "shape_swarm",
+      "noise": "student_t3",
+      "swarm": 24,
+      "se": 0.06699977379166601,
+      "mean": 0.07704038598214406,
+      "mde90_positive": 0.29230618147041104,
+      "mde90_negative": 0.30431789978182533,
+      "normal_location_approximation": 0.30040278252344976
+    },
+    {
+      "id": "shape_swarm_lognormal_12",
+      "kind": "shape_swarm",
+      "noise": "lognormal",
+      "swarm": 12,
+      "se": 0.07884727141163757,
+      "mean": 0.03952730208914654,
+      "mde90_positive": 0.35547285501719583,
+      "mde90_negative": 0.344718605081753,
+      "normal_location_approximation": 0.35352268203305237
+    },
+    {
+      "id": "shape_swarm_lognormal_24",
+      "kind": "shape_swarm",
+      "noise": "lognormal",
+      "swarm": 24,
+      "se": 0.0751308823057746,
+      "mean": 0.007466541906439446,
+      "mde90_positive": 0.3341748684100189,
+      "mde90_negative": 0.3374061999466328,
+      "normal_location_approximation": 0.33685973579964373
+    },
+    {
+      "id": "shape_swarm_contaminated_12",
+      "kind": "shape_swarm",
+      "noise": "contaminated",
+      "swarm": 12,
+      "se": 0.07179720402762539,
+      "mean": 0.011736182502770429,
+      "mde90_positive": 0.330935386851943,
+      "mde90_negative": 0.3082151799157932,
+      "normal_location_approximation": 0.32191272666632975
+    },
+    {
+      "id": "shape_swarm_contaminated_24",
+      "kind": "shape_swarm",
+      "noise": "contaminated",
+      "swarm": 24,
+      "se": 0.0741774021015476,
+      "mean": -0.09751489625389702,
+      "mde90_positive": 0.34635038175581334,
+      "mde90_negative": 0.31634113544356557,
+      "normal_location_approximation": 0.3325846750013572
+    }
+  ],
+  "mean_lower_above_002": 5,
+  "bootstrap_critical_9999": 3.1874232609810953,
+  "bootstrap_critical_99999": 3.2020871920658975,
+  "maximum_ci_endpoint_change": 0.0011562109542049837,
+  "scope": "conditional fixed-grid inference; hierarchical and MDE calculations are exploratory sensitivity only"
+}

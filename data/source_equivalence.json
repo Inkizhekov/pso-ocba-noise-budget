@@ -1,0 +1,215 @@
+{
+  "comparison": "current scientific modules versus the retained full 20261024 release",
+  "previous_archive": "ocba_reviewer_full_20261024.zip",
+  "files": [
+    {
+      "path": "experiment.py",
+      "previous_sha256": "4f2cf48e75b001bd616acb59e7ae98d4fa55175a7ef723ca7c739527d247291e",
+      "current_sha256": "4f2cf48e75b001bd616acb59e7ae98d4fa55175a7ef723ca7c739527d247291e",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "97b8098991943880529b8fa2d42496634cbf5b4f357cbbe135ee91021da16c95"
+    },
+    {
+      "path": "run_robust_ocba_study.py",
+      "previous_sha256": "9e1956ea75fd48a2b125e985c93e7f4d84f2933f8eebf32dd50f423da200beab",
+      "current_sha256": "9e1956ea75fd48a2b125e985c93e7f4d84f2933f8eebf32dd50f423da200beab",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "0dbc9e1da03b321d6537209bb655a376dbc22d1ab8a168ed08210e644d17fb72"
+    },
+    {
+      "path": "robust_ocba_engine.py",
+      "previous_sha256": "fc2c30f385e9b2290473fde7904e50f0e4fe5891e68c5318057343523ceb535d",
+      "current_sha256": "cd5fe610eb8ab4ce4cb62adc09e666afe3f5fc9855bc90cbaaf810127ee6d49a",
+      "byte_identical": false,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "e56960222000256c7f32f04c52bcced8bc932853352f4c11757604c371577875"
+    },
+    {
+      "path": "ocba_engine.py",
+      "previous_sha256": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+      "current_sha256": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "4764784480276f2c8a4d37434b5967d4718742d4103c4702bddc70b9f33167c1"
+    },
+    {
+      "path": "ocba.py",
+      "previous_sha256": "f822ec9ffa2d345545c214cefc02d6f775d4ed7fe10a1ee21fdde105d918ffb7",
+      "current_sha256": "c20efac43d9612a8a5dce522b85ff3667e6209c7525593a749166e57e4b6aec5",
+      "byte_identical": false,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "e04c34b24bb4a2ace7fd51b800d8ecd19d06b146866155d9352dce64645516ab"
+    },
+    {
+      "path": "ocba_benchmarks.py",
+      "previous_sha256": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+      "current_sha256": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "501e5bd56af308a6f72113357f67d05e340a4d54163ce6708a00a07452c6dd5c"
+    },
+    {
+      "path": "run_ocba_study.py",
+      "previous_sha256": "fb4b7847d2eb82854c157781e5a8b854a34c4a6a9b35adca8f3e88e234782e67",
+      "current_sha256": "fb4b7847d2eb82854c157781e5a8b854a34c4a6a9b35adca8f3e88e234782e67",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "eef47151a6cca9dac7c906b9b8761f45afbf486ed41bc8e3d0bb20a90dc86bee"
+    },
+    {
+      "path": "record_runtime_environment.py",
+      "previous_sha256": "ac9c3f6934fabb3e483606e04423cdf0546ebf3050a38dc07f31cde360d5e8e8",
+      "current_sha256": "ac9c3f6934fabb3e483606e04423cdf0546ebf3050a38dc07f31cde360d5e8e8",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "58700cd364b8f027ac985cc5f63e7c46ded8c4f3d796ab3bff93e8a915f3511c"
+    },
+    {
+      "path": "plan_robust_nn_power.py",
+      "previous_sha256": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+      "current_sha256": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "0a9f9414b416af5091f45fa13c57a1af3302dd5a5f330a93c2f7289719d0f9d4"
+    },
+    {
+      "path": "validate_robust_power.py",
+      "previous_sha256": "6f3921c8fa53b619d466a51ff0ade70caba7dfd5367d65ea6525958a4cf01acb",
+      "current_sha256": "6f3921c8fa53b619d466a51ff0ade70caba7dfd5367d65ea6525958a4cf01acb",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "643b6ea914910f94baf3c07d598b608846c4be6bef93fa32ef7e8f113e370471"
+    },
+    {
+      "path": "analyze_robust_ocba_study.py",
+      "previous_sha256": "a94e486066bad736736d2e702cc08b93f1a00a9e626d280a6ac6ff0b4605f9b6",
+      "current_sha256": "a94e486066bad736736d2e702cc08b93f1a00a9e626d280a6ac6ff0b4605f9b6",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "d6d610826da5681f384898c9ce0f7f7d9ba23f03908e82850419b881a7567c71"
+    },
+    {
+      "path": "analyze_ocba_study.py",
+      "previous_sha256": "71acdfed2dc4fad5d78ef893b10944e1cd354b6d40bdc73024164900c6d78eb1",
+      "current_sha256": "71acdfed2dc4fad5d78ef893b10944e1cd354b6d40bdc73024164900c6d78eb1",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "dab425e6cf607ec80b5a1b535d90e369c7cb83983ffc445989fadfc7195ec43c"
+    },
+    {
+      "path": "study_statistics.py",
+      "previous_sha256": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d",
+      "current_sha256": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "8b277b1e49a90309f437beee3f0bb4381d1368265370786e441baf2cad495b90"
+    },
+    {
+      "path": "paired_mean_inference.py",
+      "previous_sha256": "5234b88e963658a1480bc705f84fc609a6645d1fb750d3c917b8ca28c0bd796b",
+      "current_sha256": "7a1d60982aaff3f667750c9da9ff3e413910dffa01378db76c4722d8576a3154",
+      "byte_identical": false,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "1c7706cc93847bfd452d27fede23d6702c8c1d410da056e07d7054ebab5262d6"
+    },
+    {
+      "path": "analyze_ocba_interactions.py",
+      "previous_sha256": "5753cfa4fe08cfa47603ad7f8c1a69c6c5847e90779fc2b5fe9d4a2396667313",
+      "current_sha256": "5753cfa4fe08cfa47603ad7f8c1a69c6c5847e90779fc2b5fe9d4a2396667313",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "49808255a095dffb3804b2c9a92bff7f7860346e49b9cab60632ad30f897cd3e"
+    },
+    {
+      "path": "run_n0_ablation.py",
+      "previous_sha256": "c39576fd95ede8f1f199ef2ce7112f5545a2af01085ffdba5cdba6627a7fc64d",
+      "current_sha256": "c39576fd95ede8f1f199ef2ce7112f5545a2af01085ffdba5cdba6627a7fc64d",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "5cb9bb028edfb048abe23d7132e7f448b06221da067e1f3c6c68c209f9f22f15"
+    },
+    {
+      "path": "analyze_n0_ablation.py",
+      "previous_sha256": "b27e109c3f39048acf6511cd88e62130b19978e4f6cad1ff2e85257f8bb7899c",
+      "current_sha256": "b27e109c3f39048acf6511cd88e62130b19978e4f6cad1ff2e85257f8bb7899c",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "2e136cc9c0bd1204971d98cb0ee2fdbfd5c776137fefecac43fd9485aa9a732f"
+    },
+    {
+      "path": "run_ocba_instance_validation.py",
+      "previous_sha256": "1cda568d0650794a06c2182a52f5cd8c623bc3675b1d86f10db0f7fca90d15c7",
+      "current_sha256": "1cda568d0650794a06c2182a52f5cd8c623bc3675b1d86f10db0f7fca90d15c7",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "e0998f08070414868b71e6faa60c75a694f13f693da1569edcb0f5c015685e47"
+    },
+    {
+      "path": "analyze_ocba_scope.py",
+      "previous_sha256": "f840b03f5dba451539247089bc4cbdccfb03e05bc95e45181f0195cbfd1a22d9",
+      "current_sha256": "f840b03f5dba451539247089bc4cbdccfb03e05bc95e45181f0195cbfd1a22d9",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "9264858dca7cd983f051acdc6790e23e8e3a934c845b116891c98cb65aeadd43"
+    },
+    {
+      "path": "diagnose_ocba_traces.py",
+      "previous_sha256": "d5b483dadceb1b39ec5eaa577e19942146a8d35d9a42c9fcaa4570726748ec50",
+      "current_sha256": "d5b483dadceb1b39ec5eaa577e19942146a8d35d9a42c9fcaa4570726748ec50",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "ddb292e66042a9d39f6fe83fea1deb7192a54906b56dafca16c08af0f280588d"
+    },
+    {
+      "path": "audit_ocba_revision.py",
+      "previous_sha256": "e25e03a4cff4bc7916621dc0eeb835d18e4f796100784161fa83db0cf8d67218",
+      "current_sha256": "e25e03a4cff4bc7916621dc0eeb835d18e4f796100784161fa83db0cf8d67218",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "8e872c15cf75b25320cfef3dde42c65974c5667db0e698bb87a9f1e3268eb504"
+    },
+    {
+      "path": "audit_ocba_hierarchy.py",
+      "previous_sha256": "2ad8b8071b7f72f10ac71bf854548519d4a80676b1738f8f4978fe401d40bfe7",
+      "current_sha256": "2ad8b8071b7f72f10ac71bf854548519d4a80676b1738f8f4978fe401d40bfe7",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "fa1297f5114862a749b41aed0a1ca40d53fb82e223e38414ec405e2722754e31"
+    },
+    {
+      "path": "fetch_ocba_data.py",
+      "previous_sha256": "8d7d32dc644b1911cb2b0bebe23ff0fc5f53337e2f7046bf84ffb288be7b4fdf",
+      "current_sha256": "8d7d32dc644b1911cb2b0bebe23ff0fc5f53337e2f7046bf84ffb288be7b4fdf",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "59e8a60eecf0cc9f54b7ab9d1c550342b68d5645733564e04be907e1ee648c3e"
+    },
+    {
+      "path": "historical/__init__.py",
+      "previous_sha256": "3358464bf14f05788b79a04392f06a9073f33c2d29d2dc6a4bab9b8ab575799e",
+      "current_sha256": "3358464bf14f05788b79a04392f06a9073f33c2d29d2dc6a4bab9b8ab575799e",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "b5dd87b845d697e832c9bcf6ed28c2e1947c7c155f08243a03448e55a16cda09"
+    },
+    {
+      "path": "historical/ocba_20261022/__init__.py",
+      "previous_sha256": "51da8c87cabebc450b65a12c0064fd69beca174a13e92818478524ae74ace2b6",
+      "current_sha256": "51da8c87cabebc450b65a12c0064fd69beca174a13e92818478524ae74ace2b6",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "9eb032014e928c0f6eddaf663de52e3596a1bcb0b80af2c913af22b33b3ca26f"
+    },
+    {
+      "path": "historical/ocba_20261022/experiment.py",
+      "previous_sha256": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+      "current_sha256": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+      "byte_identical": true,
+      "syntax_tree_identical": true,
+      "syntax_tree_sha256": "367f64b9b589c88a0f9b8d9ad557dcbb3bb537ba7abe16a16e415b20edc5d0e9"
+    }
+  ],
+  "limitation": "syntax-tree identity checks implementation structure; it is not an empirical replication"
+}

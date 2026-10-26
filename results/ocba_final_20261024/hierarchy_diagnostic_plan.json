@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-23T22:49:01.068329+00:00",
+  "status": "post_hoc_numerical_diagnostic_no_new_primary_family",
+  "inputs": {
+    "results\\ocba_instances_20261022\\runs.csv": "295894171191d4562dfd7e2f923bd58c4163255f575aa93ff1396daf7b6668e5",
+    "results\\ocba_scope_20261023\\hierarchical_sensitivity.csv": "917b77eec7cef01486ad81453e91715066e0a6d73a8d7f94ffb230a7d62ea99f"
+  },
+  "source_sha256": "2ad8b8071b7f72f10ac71bf854548519d4a80676b1738f8f4978fe401d40bfe7",
+  "repetitions": 99999,
+  "seeds": [
+    14232026,
+    14242026
+  ],
+  "levels": [
+    "full",
+    "family_instance",
+    "family"
+  ],
+  "purpose": "audit the retained interval, studentization, resampling levels and Monte Carlo sensitivity",
+  "new_objective_calls": 0
+}

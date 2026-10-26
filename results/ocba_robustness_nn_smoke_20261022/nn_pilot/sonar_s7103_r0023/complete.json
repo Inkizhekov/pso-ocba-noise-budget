@@ -1,0 +1,29 @@
+{
+  "id": "sonar_s7103_r0023",
+  "job": {
+    "phase": "nn_pilot",
+    "dataset": "sonar",
+    "split_seed": 7103,
+    "swarm": 12,
+    "budget": 540,
+    "runs": 1,
+    "run": 23,
+    "power_plan_sha256": "pilot"
+  },
+  "task": {
+    "sizes": [
+      124,
+      42,
+      42
+    ],
+    "epochs": 20
+  },
+  "searches": 3,
+  "calls": 1620,
+  "seconds": 13.326990499999738,
+  "sha256": {
+    "runs.csv": "d3e815c8f30569fd7943e464ad84c622a41bca537fa8369c21517f646ea9a53c",
+    "evaluations.csv.gz": "fb348df6ead40083309f5978efda4c94f42fc28fee16f9d27001aa831c81f387",
+    "pools.csv.gz": "0d51047625099c4ed43baa3ef2994e047959fbc96fe995e517394beb86316af8"
+  }
+}

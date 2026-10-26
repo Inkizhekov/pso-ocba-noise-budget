@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-10-22T10:01:23.514422+00:00",
+  "status": "exploratory focused ablation; historical results already inspected",
+  "smoke": false,
+  "source_sha256": {
+    "run_robust_ocba_study.py": "9e1956ea75fd48a2b125e985c93e7f4d84f2933f8eebf32dd50f423da200beab",
+    "robust_ocba_engine.py": "fc2c30f385e9b2290473fde7904e50f0e4fe5891e68c5318057343523ceb535d",
+    "plan_robust_nn_power.py": "a6d8d74a02a7de3e42c8351099a6378680cdd138a1f6971b28ea0aa2d3b25f2b",
+    "ocba.py": "f822ec9ffa2d345545c214cefc02d6f775d4ed7fe10a1ee21fdde105d918ffb7",
+    "ocba_engine.py": "2101edad413ac4a87f401593fb460580b248a7955a129f7f6416eaff422a10ef",
+    "ocba_benchmarks.py": "ee8245d704fdaf12c939a9b2bdebbf607ad327d9b47235d6d5c9c7643e3cf302",
+    "experiment.py": "4f2cf48e75b001bd616acb59e7ae98d4fa55175a7ef723ca7c739527d247291e",
+    "run_ocba_study.py": "fb4b7847d2eb82854c157781e5a8b854a34c4a6a9b35adca8f3e88e234782e67",
+    "study_statistics.py": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d",
+    "analyze_robust_ocba_study.py": "a94e486066bad736736d2e702cc08b93f1a00a9e626d280a6ac6ff0b4605f9b6",
+    "validate_robust_power.py": "6f3921c8fa53b619d466a51ff0ade70caba7dfd5367d65ea6525958a4cf01acb",
+    "record_runtime_environment.py": "ac9c3f6934fabb3e483606e04423cdf0546ebf3050a38dc07f31cde360d5e8e8",
+    "historical/__init__.py": "3358464bf14f05788b79a04392f06a9073f33c2d29d2dc6a4bab9b8ab575799e",
+    "historical/ocba_20261022/__init__.py": "51da8c87cabebc450b65a12c0064fd69beca174a13e92818478524ae74ace2b6",
+    "historical/ocba_20261022/experiment.py": "7a6c654a658dedada00b40e9688e86d140f08e0650ed92edaf7a0da822db63b5",
+    "run_n0_ablation.py": "c39576fd95ede8f1f199ef2ce7112f5545a2af01085ffdba5cdba6627a7fc64d",
+    "analyze_n0_ablation.py": "b27e109c3f39048acf6511cd88e62130b19978e4f6cad1ff2e85257f8bb7899c",
+    "paired_mean_inference.py": "5234b88e963658a1480bc705f84fc609a6645d1fb750d3c917b8ca28c0bd796b"
+  },
+  "tasks": [
+    "ackley",
+    "rosenbrock"
+  ],
+  "task_rationale": "multimodal Ackley and curved-valley Rosenbrock; no best-cell selection",
+  "dimension": 8,
+  "eta": 2,
+  "swarms": [
+    12
+  ],
+  "budgets": [
+    8640
+  ],
+  "noise_families": [
+    "gaussian",
+    "student_t3",
+    "lognormal",
+    "contaminated"
+  ],
+  "initial_repeats": [
+    3,
+    5,
+    10
+  ],
+  "generation_multiplier": 12,
+  "methods": [
+    "pso_ea",
+    "pso_ocba_rs",
+    "pso_ocba"
+  ],
+  "runs": 30,
+  "seed_policy": "reuse the original matched 30 seed blocks for paired historical 6*M bridge",
+  "generation_note": "n0=10 is infeasible at 6*M; all n0 arms use 12*M and 60 generations",
+  "historical_source": "results/ocba_robustness_20261022/synthetic_runs.csv",
+  "historical_source_sha256": "4864bdc8f7350d146fcb90dfcfb935bafaf08cc21202ff89ddb485c122b76188",
+  "new_searches": 2160,
+  "new_calls": 18662400,
+  "inference": "72 exploratory joint max-t mean contrasts; fixed two-task strata, 30 shared-seed blocks"
+}

@@ -1,0 +1,159 @@
+{
+  "status": "post_hoc_existing_data",
+  "created_utc": "2026-10-22T10:01:06.275178+00:00",
+  "source_inputs": {
+    "synthetic_runs.csv": "4864bdc8f7350d146fcb90dfcfb935bafaf08cc21202ff89ddb485c122b76188",
+    "synthetic_pairwise.csv": "93cd5e6758f11227a33ecaf18deef6e8be292e9ea3c456ce1d09b7e933acba83",
+    "nn_main_runs.csv": "f6a5dc7402648707bb1b0a7d2e9efed3b75aff030dc750f51d2bd9265fae375a",
+    "protocol.json": "dc64b38513addf78c03ac9d994547a33033e07f35bf25297e817ec4edadfabef"
+  },
+  "source_directory": "D:\\Python\\Paper\\swarm_vak_project\\results\\ocba_robustness_20261022",
+  "contrasts": [
+    {
+      "id": "shape_student_t3",
+      "kind": "shape",
+      "noise": "student_t3"
+    },
+    {
+      "id": "shape_lognormal",
+      "kind": "shape",
+      "noise": "lognormal"
+    },
+    {
+      "id": "shape_contaminated",
+      "kind": "shape",
+      "noise": "contaminated"
+    },
+    {
+      "id": "shape_budget_student_t3_2160",
+      "kind": "shape_budget",
+      "noise": "student_t3",
+      "budget": 2160
+    },
+    {
+      "id": "shape_budget_student_t3_8640",
+      "kind": "shape_budget",
+      "noise": "student_t3",
+      "budget": 8640
+    },
+    {
+      "id": "shape_budget_lognormal_2160",
+      "kind": "shape_budget",
+      "noise": "lognormal",
+      "budget": 2160
+    },
+    {
+      "id": "shape_budget_lognormal_8640",
+      "kind": "shape_budget",
+      "noise": "lognormal",
+      "budget": 8640
+    },
+    {
+      "id": "shape_budget_contaminated_2160",
+      "kind": "shape_budget",
+      "noise": "contaminated",
+      "budget": 2160
+    },
+    {
+      "id": "shape_budget_contaminated_8640",
+      "kind": "shape_budget",
+      "noise": "contaminated",
+      "budget": 8640
+    },
+    {
+      "id": "shape_swarm_student_t3_12",
+      "kind": "shape_swarm",
+      "noise": "student_t3",
+      "swarm": 12
+    },
+    {
+      "id": "shape_swarm_student_t3_24",
+      "kind": "shape_swarm",
+      "noise": "student_t3",
+      "swarm": 24
+    },
+    {
+      "id": "shape_swarm_lognormal_12",
+      "kind": "shape_swarm",
+      "noise": "lognormal",
+      "swarm": 12
+    },
+    {
+      "id": "shape_swarm_lognormal_24",
+      "kind": "shape_swarm",
+      "noise": "lognormal",
+      "swarm": 24
+    },
+    {
+      "id": "shape_swarm_contaminated_12",
+      "kind": "shape_swarm",
+      "noise": "contaminated",
+      "swarm": 12
+    },
+    {
+      "id": "shape_swarm_contaminated_24",
+      "kind": "shape_swarm",
+      "noise": "contaminated",
+      "swarm": 24
+    },
+    {
+      "id": "shape_eta_student_t3",
+      "kind": "shape_eta",
+      "noise": "student_t3"
+    },
+    {
+      "id": "shape_eta_lognormal",
+      "kind": "shape_eta",
+      "noise": "lognormal"
+    },
+    {
+      "id": "shape_eta_contaminated",
+      "kind": "shape_eta",
+      "noise": "contaminated"
+    },
+    {
+      "id": "mean_gaussian",
+      "kind": "mean",
+      "noise": "gaussian"
+    },
+    {
+      "id": "mean_student_t3",
+      "kind": "mean",
+      "noise": "student_t3"
+    },
+    {
+      "id": "mean_lognormal",
+      "kind": "mean",
+      "noise": "lognormal"
+    },
+    {
+      "id": "mean_contaminated",
+      "kind": "mean",
+      "noise": "contaminated"
+    },
+    {
+      "id": "mean_all",
+      "kind": "mean",
+      "noise": "all"
+    }
+  ],
+  "bootstrap_repetitions": 99999,
+  "bootstrap_seed": 10222026,
+  "fixed_strata": [
+    "sphere",
+    "ellipsoid",
+    "rosenbrock",
+    "ackley",
+    "rastrigin",
+    "griewank",
+    "levy",
+    "zakharov"
+  ],
+  "seed_blocks_per_stratum": 30,
+  "new_primary_claims": false,
+  "source_sha256": {
+    "analyze_ocba_interactions.py": "5753cfa4fe08cfa47603ad7f8c1a69c6c5847e90779fc2b5fe9d4a2396667313",
+    "paired_mean_inference.py": "5234b88e963658a1480bc705f84fc609a6645d1fb750d3c917b8ca28c0bd796b",
+    "study_statistics.py": "b0826d7cdb5ea874050b8422cef4fdb2199e01aa7c63429c2e54655a3d07fe8d"
+  }
+}

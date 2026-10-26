@@ -1,0 +1,142 @@
+{
+  "runs_per_cell": 456,
+  "mc_repetitions_per_model": 50000,
+  "validation_seed": 80126319,
+  "models": [
+    {
+      "model": "normal_upper_sd",
+      "power": 0.92254,
+      "simultaneous_mc_power_low": 0.9189844897816216,
+      "simultaneous_mc_power_high": 0.9259520433569163,
+      "null_rejection_rate": 0.00414,
+      "simultaneous_mc_null_low": 0.0033833402013350765,
+      "simultaneous_mc_null_high": 0.0050650213216560545
+    },
+    {
+      "model": "student_t3_upper_sd",
+      "power": 0.91972,
+      "simultaneous_mc_power_low": 0.9161075790155917,
+      "simultaneous_mc_power_high": 0.9231899116099279,
+      "null_rejection_rate": 0.00362,
+      "simultaneous_mc_null_low": 0.002917227859064662,
+      "simultaneous_mc_null_high": 0.004491310221809654
+    },
+    {
+      "model": "centered_pilot_0",
+      "power": 0.92518,
+      "simultaneous_mc_power_low": 0.9216789950458945,
+      "simultaneous_mc_power_high": 0.9285366417218518,
+      "null_rejection_rate": 0.00362,
+      "simultaneous_mc_null_low": 0.002917227859064662,
+      "simultaneous_mc_null_high": 0.004491310221809654
+    },
+    {
+      "model": "centered_pilot_1",
+      "power": 0.9207,
+      "simultaneous_mc_power_low": 0.9171072070136587,
+      "simultaneous_mc_power_high": 0.9241499508681579,
+      "null_rejection_rate": 0.00442,
+      "simultaneous_mc_null_low": 0.003635725048733324,
+      "simultaneous_mc_null_high": 0.005372541404628403
+    },
+    {
+      "model": "centered_pilot_2",
+      "power": 0.92164,
+      "simultaneous_mc_power_low": 0.9180661827211074,
+      "simultaneous_mc_power_high": 0.925070655998382,
+      "null_rejection_rate": 0.00482,
+      "simultaneous_mc_null_low": 0.003997753695535766,
+      "simultaneous_mc_null_high": 0.005810376944069664
+    },
+    {
+      "model": "centered_pilot_3",
+      "power": 0.93206,
+      "simultaneous_mc_power_low": 0.9287070551975832,
+      "simultaneous_mc_power_high": 0.9352662455735548,
+      "null_rejection_rate": 0.00424,
+      "simultaneous_mc_null_low": 0.003473373302753565,
+      "simultaneous_mc_null_high": 0.005174954266798493
+    },
+    {
+      "model": "centered_pilot_4",
+      "power": 0.92456,
+      "simultaneous_mc_power_low": 0.921046084851243,
+      "simultaneous_mc_power_high": 0.9279297624278255,
+      "null_rejection_rate": 0.00434,
+      "simultaneous_mc_null_low": 0.0035635234024826382,
+      "simultaneous_mc_null_high": 0.005284770213630347
+    },
+    {
+      "model": "centered_pilot_5",
+      "power": 0.91542,
+      "simultaneous_mc_power_low": 0.9117232642643078,
+      "simultaneous_mc_power_high": 0.918975686359092,
+      "null_rejection_rate": 0.00444,
+      "simultaneous_mc_null_low": 0.0036537865350592326,
+      "simultaneous_mc_null_high": 0.005394473127614679
+    },
+    {
+      "model": "centered_pilot_6",
+      "power": 0.9071,
+      "simultaneous_mc_power_low": 0.9032479010646574,
+      "simultaneous_mc_power_high": 0.9108138744848735,
+      "null_rejection_rate": 0.00466,
+      "simultaneous_mc_null_low": 0.0038527451431105432,
+      "simultaneous_mc_null_high": 0.005635439821997406
+    },
+    {
+      "model": "centered_pilot_7",
+      "power": 0.9151,
+      "simultaneous_mc_power_low": 0.9113971038200724,
+      "simultaneous_mc_power_high": 0.9186619554543324,
+      "null_rejection_rate": 0.00446,
+      "simultaneous_mc_null_low": 0.003671852392223385,
+      "simultaneous_mc_null_high": 0.005416400479762712
+    },
+    {
+      "model": "centered_pilot_8",
+      "power": 0.90972,
+      "simultaneous_mc_power_low": 0.9059157761029972,
+      "simultaneous_mc_power_high": 0.9133851098664297,
+      "null_rejection_rate": 0.00394,
+      "simultaneous_mc_null_low": 0.0032036420673704443,
+      "simultaneous_mc_null_high": 0.0048447873624988345
+    },
+    {
+      "model": "centered_pilot_9",
+      "power": 0.92386,
+      "simultaneous_mc_power_low": 0.9203315904160395,
+      "simultaneous_mc_power_high": 0.9272444945371026,
+      "null_rejection_rate": 0.00426,
+      "simultaneous_mc_null_low": 0.0034913940930380153,
+      "simultaneous_mc_null_high": 0.0051969266858262276
+    },
+    {
+      "model": "centered_pilot_10",
+      "power": 0.92278,
+      "simultaneous_mc_power_low": 0.9192293948824399,
+      "simultaneous_mc_power_high": 0.9261870567678441,
+      "null_rejection_rate": 0.00418,
+      "simultaneous_mc_null_low": 0.0034193391386312427,
+      "simultaneous_mc_null_high": 0.005109008802984259
+    },
+    {
+      "model": "centered_pilot_11",
+      "power": 0.92952,
+      "simultaneous_mc_power_low": 0.9261113354563786,
+      "simultaneous_mc_power_high": 0.9327828277321119,
+      "null_rejection_rate": 0.00422,
+      "simultaneous_mc_null_low": 0.003455357191639821,
+      "simultaneous_mc_null_high": 0.005152977168600052
+    }
+  ],
+  "power_plan_sha256": "43270903a8dd6e0f8da44b9b86dfcbff158cf7dda3f0adacd50c066db5f9e03b",
+  "pilot_sha256": "2a2f40530f6b02d14350bc2475347937aa2be6e93091f6ae1c331fdbc5bab49b",
+  "validator_sha256": "6f3921c8fa53b619d466a51ff0ade70caba7dfd5367d65ea6525958a4cf01acb",
+  "main_results_used": false,
+  "sample_size_changed": false,
+  "mc_interval_family_confidence": 0.95,
+  "empirical_law_variance_standardization_ddof": 0,
+  "minimum_power_lower_bound": 0.9032479010646574,
+  "maximum_null_rejection_rate": 0.00482
+}
