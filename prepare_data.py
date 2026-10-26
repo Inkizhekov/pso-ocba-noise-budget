@@ -9,6 +9,8 @@ import logging
 from pathlib import Path, PurePosixPath
 import tempfile
 
+from research_integrity import selected_hashes
+
 
 ROOT = Path(__file__).resolve().parent
 MANIFEST = "github_payload_manifest.json"
@@ -31,12 +33,10 @@ def digest(path: Path) -> str:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
-def verify_transport(manifest: dict) -> None:
+def verify_transport(manifest: dict, *, strict_release: bool = False) -> None:
     if manifest.get("format") != "ocba-github-web-upload-v1":
         raise ValueError("Unsupported GitHub payload manifest")
-    hashes = manifest.get("sha256")
-    if not isinstance(hashes, dict) or not hashes:
-        raise ValueError("The payload manifest has no file checksums")
+    hashes = selected_hashes(manifest, strict_release=strict_release)
     for name, expected in hashes.items():
         path = safe_path(name)
         if not path.is_file() or digest(path) != expected:
@@ -90,11 +90,12 @@ def restore_one(item: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verify-only", action="store_true", help="Check uploaded bytes without restoring data")
+    parser.add_argument("--strict-release", action="store_true", help="Also check release code and documentation bytes")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     try:
         manifest = json.loads((ROOT / MANIFEST).read_text(encoding="utf-8"))
-        verify_transport(manifest)
+        verify_transport(manifest, strict_release=args.strict_release)
         if not args.verify_only:
             for item in manifest["compressed_files"]:
                 restore_one(item)

@@ -1,0 +1,35 @@
+name: Scientific checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13.3'
+      - name: Prepare and verify frozen scientific artifacts
+        run: |
+          python prepare_data.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python verify_reviewer_package.py
+      - name: Install pinned scientific dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip check
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Check a small technical search
+        run: python experiment.py --smoke --workers 1 --out reviewer_checks/ci_smoke
+      - name: Recompute statistics from saved results
+        run: python verify_reviewer_package.py --recompute --out reviewer_checks/ci_recompute

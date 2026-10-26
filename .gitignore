@@ -8,6 +8,7 @@ __pycache__/
 reviewer_checks/
 releases/
 results/my_*/
+results/new_*/
 results/ocba_current/
 results/ocba_robustness_20261022/synthetic_runs.csv
 *.tmp

@@ -1,9 +1,10 @@
 # Source data and reuse information
 
-No project-wide license for the author's code, manuscripts or generated results
-has been selected in this release. This package does not assign a new license
-to those materials. Public availability and an open-source license are separate
-choices. See [GitHub's licensing documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+The author's Python code, tests, workflows and technical documentation are
+licensed under the [MIT License](LICENSE). The grant does not cover the
+research manuscripts (DOCX or PDF), generated research results under `results/`,
+or research records under `data/`; no additional reuse license is assigned to
+those materials here. The input datasets retain their own terms below.
 
 The input datasets retain their own terms. Their UCI (University of California,
 Irvine) source pages identify the Creative Commons Attribution 4.0 International

@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import binomtest, t, ttest_1samp, wilcoxon
 
+from ocba_benchmarks import ControlledBenchmark
 from run_robust_ocba_study import (
     BUDGETS, DEFAULT_OUT, NN_DATASETS, NN_METHODS, NN_SPLITS, NOISES,
     SYNTH_METHODS, SWARMS, RobustBenchmark, job_id, jobs, sha256, source_hashes,
@@ -29,6 +30,17 @@ KEYS = ["dataset", "noise", "eta", "swarm", "budget"]
 NN_KEYS = ["dataset", "split_seed"]
 
 
+def check_benchmark_metadata(benchmark: RobustBenchmark, saved: dict) -> bool:
+    if saved == benchmark.metadata():
+        return False
+    # Initial archives inherited the Gaussian label even for other noise families.
+    legacy = {**ControlledBenchmark.metadata(benchmark), "noise_family": benchmark.noise,
+              "noise_mean": 0, "noise_variance_before_heteroskedastic_factor": 1}
+    if saved == legacy:
+        return True
+    raise ValueError("Benchmark transformation or calibration changed")
+
+
 def audit_job(folder_name: str) -> dict:
     folder = Path(folder_name)
     metadata = json.loads((folder / "complete.json").read_text(encoding="utf-8"))
@@ -37,11 +49,11 @@ def audit_job(folder_name: str) -> dict:
             raise ValueError(f"Archive changed: {folder / name}")
     frame = pd.read_csv(folder / "runs.csv")
     benchmark = None
+    legacy_noise_description = False
     if metadata["job"]["phase"] == "synthetic":
         job = metadata["job"]
         benchmark = RobustBenchmark(job["dataset"], job["eta"], job["noise"])
-        if benchmark.metadata() != metadata["task"]:
-            raise ValueError("Benchmark transformation or calibration changed")
+        legacy_noise_description = check_benchmark_metadata(benchmark, metadata["task"])
     rows = {(row.method, int(row.run)): row for row in frame.itertuples()}
     pool_ids = {key: set() for key in rows}
     selected_coordinates = {}
@@ -93,6 +105,7 @@ def audit_job(folder_name: str) -> dict:
                     or abs(correct.sum()/row.assessment_denominator - row.final_score) > 1e-12):
                 raise ValueError("Invalid final NN refits or accuracy lattice")
     return {"folder": folder.as_posix(), "searches": len(frame),
+            "legacy_noise_description": legacy_noise_description,
             "calls": sum(counts.values()), "selected_means_reconstructed": len(frame),
             "completion_sha256": sha256(folder / "complete.json"),
             "sha256": metadata["sha256"]}

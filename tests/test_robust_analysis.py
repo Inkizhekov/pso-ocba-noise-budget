@@ -8,8 +8,9 @@ import unittest
 
 import pandas as pd
 
-from analyze_robust_ocba_study import audit_job
-from run_robust_ocba_study import sha256
+from analyze_robust_ocba_study import audit_job, check_benchmark_metadata
+from ocba_benchmarks import ControlledBenchmark
+from run_robust_ocba_study import RobustBenchmark, NOISES, sha256
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -70,6 +71,22 @@ class ArchiveAuditTests(unittest.TestCase):
         self.update_recorded_hash("runs.csv")
         with self.assertRaisesRegex(ValueError, "final NN"):
             audit_job(str(self.folder))
+
+
+class BenchmarkMetadataTests(unittest.TestCase):
+    def test_exact_current_and_legacy_metadata_are_supported(self):
+        for noise in NOISES:
+            with self.subTest(noise=noise):
+                task = RobustBenchmark("sphere", 2, noise)
+                self.assertFalse(check_benchmark_metadata(task, task.metadata()))
+                legacy = {**ControlledBenchmark.metadata(task), "noise_family": noise,
+                          "noise_mean": 0, "noise_variance_before_heteroskedastic_factor": 1}
+                self.assertTrue(check_benchmark_metadata(task, legacy))
+                for field, replacement in (("noise_family", "wrong"), ("noise", "wrong"),
+                                           ("noise_mean", 1), ("eta", 100)):
+                    changed = {**legacy, field: replacement}
+                    with self.assertRaisesRegex(ValueError, "transformation or calibration"):
+                        check_benchmark_metadata(task, changed)
 
 
 if __name__ == "__main__":

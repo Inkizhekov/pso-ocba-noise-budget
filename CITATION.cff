@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the accompanying manuscript when using these experiments."
 type: software
+license: MIT
 title: "PSO-OCBA noise and finite-budget experiments"
 authors:
   - family-names: Inkizhekov

@@ -6,10 +6,21 @@ import numpy as np
 from ocba_benchmarks import ControlledBenchmark
 from ocba_engine import run_search as frozen_search
 from robust_ocba_engine import run_search
-from run_robust_ocba_study import RobustBenchmark, jobs, DEFAULT_OUT
+from run_robust_ocba_study import RobustBenchmark, jobs, DEFAULT_OUT, NOISE_DISTRIBUTIONS
 
 
 class RobustEngineTests(unittest.TestCase):
+    def test_metadata_names_the_actual_noise_distribution(self):
+        for noise, distribution in NOISE_DISTRIBUTIONS.items():
+            with self.subTest(noise=noise):
+                task = RobustBenchmark("sphere", 2, noise)
+                before = task.observe(np.full(8, 0.5), 12345)
+                metadata = task.metadata()
+                self.assertEqual(metadata["noise_family"], noise)
+                self.assertEqual(metadata["noise_distribution"], distribution)
+                self.assertEqual(metadata["noise"], f"eta*(0.6+0.8*x[0])*({distribution})")
+                self.assertEqual(task.observe(np.full(8, 0.5), 12345), before)
+
     def test_frozen_default_trajectory_is_preserved(self):
         for method in ["pso", "pso_ea", "pso_ocba_rs", "pso_ocba"]:
             task = ControlledBenchmark("ackley", 8, 2)

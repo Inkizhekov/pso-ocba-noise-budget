@@ -26,6 +26,8 @@ and troubleshooting, see the [Russian experiment guide](docs/EXPERIMENT_GUIDE_RU
 
 - [English article](article_vak_swarm_noise_ocba_english_20261026.docx) and [appendices A-H](article_vak_swarm_noise_ocba_supplement_english_20261026.docx).
 - [Russian article](article_vak_swarm_noise_ocba_datasets_20261025.docx) and [appendices](article_vak_swarm_noise_ocba_supplement_datasets_20261025.docx).
+- PDF reading copies: [English article](manuscripts/article_en.pdf), [English appendices](manuscripts/supplement_en.pdf), [Russian article](manuscripts/article_ru.pdf), [Russian appendices](manuscripts/supplement_ru.pdf).
+- [MIT License for code and technical documentation](LICENSE); see the separate scope for research materials below.
 - [Input attributions and reuse information](THIRD_PARTY_NOTICES.md).
 - [Bibliography](docs/REFERENCES.md).
 
@@ -40,7 +42,14 @@ py -3.13 prepare_data.py
 py -3.13 verify_reviewer_package.py
 ```
 
-The standard-library preparation script checks every uploaded file and restores the original CSV byte for byte. It requires no network access. An existing changed CSV is rejected, not overwritten. The compressed copy remains available. Running preparation again is safe.
+The standard-library preparation script checks frozen scientific artifacts and
+restores the original CSV byte for byte. It requires no network access. An
+existing changed CSV is rejected, not overwritten. The compressed copy remains
+available. Running preparation again is safe. Edits to code or documentation
+do not block these data checks. For an exact release-byte check, including
+code and documentation, use `prepare_data.py --verify-only --strict-release`
+and `verify_reviewer_package.py --strict-release`. Maintainers can check or
+refresh release checksums using [the maintenance instructions](docs/GITHUB_UPLOAD_RU.md).
 
 For publication steps, see [the upload instructions](docs/GITHUB_UPLOAD_RU.md).
 
@@ -83,8 +92,7 @@ matplotlib==3.10.8
 
 The current study runs on the CPU (Central Processing Unit); no GPU
 (Graphics Processing Unit) is required. Optuna supports the historical
-Tree-structured Parzen Estimator (TPE) baseline. The separate
-`vision_experiment.py` branch is not part of the default manuscript study.
+Tree-structured Parzen Estimator (TPE) baseline.
 
 Run these PowerShell commands from the directory containing `experiment.py`.
 Create the environment only if it does not already exist:
@@ -185,8 +193,9 @@ processes against the same output directory.
 Protocols record byte-level source digests. Even a comment changes a source
 digest, so the current commented sources require a fresh output directory
 when an older directory was frozen against different bytes. Keep recorded
-digests intact. Recorded protocols are preserved. Current-source equivalence to the prior release
-is documented in `data/source_equivalence.json`.
+digests intact. Recorded protocols are preserved. `data/source_equivalence.json`
+is the report for the initial public commit, not a claim of source identity
+after the metadata correction. See [repository corrections](docs/RELEASE_NOTES.md).
 
 An existing power plan is reused only after checking its links to the pilot,
 protocol, and planning code. Independent power validation must precede
@@ -368,7 +377,7 @@ The `historical` directory contains only three files required by existing
 Python imports, including the tabular neural-network objective. It is not
 the full development-history snapshot.
 
-Check all included files, search totals, and final-fit counts without scientific dependencies:
+Check frozen scientific files, search totals, and final-fit counts without scientific dependencies:
 
 ```powershell
 py -3.13 prepare_data.py
@@ -389,13 +398,17 @@ MDE and bootstrap sensitivity, convergence endpoints, and the trace examples.
 It does not train all networks again or replay all 351216000 objective calls.
 The included tests execute small technical checks, not the full study.
 
-`reviewer_package_manifest.json` lists every payload file and its SHA-256.
-The external `.zip.sha256` file authenticates the complete archive.
+`reviewer_package_manifest.json` records restored-file SHA-256 checksums;
+`github_payload_manifest.json` records the uploaded representation. The two
+manifests exclude themselves and each other to avoid circular checksums;
+their bytes are identified by the Git commit. A GitHub-generated ZIP has no
+separately supplied `.zip.sha256` file in this repository.
 Download the whole repository with GitHub's Code / Download ZIP, extract it, then run prepare_data.py before verification.
 
-Verification writes new reports under `reviewer_checks`. Full primary traces
-remain available in the unchanged `ocba_reviewer_full_20261024.zip`, supplied
-separately if required. Nothing in this compact package claims external
+Verification writes new reports under `reviewer_checks`. The preserved full
+archive `ocba_reviewer_full_20261024.zip` is **not publicly hosted**. Its size,
+checksum and access status are stated in [data availability](docs/DATA_AVAILABILITY.md).
+Nothing in this compact package claims external
 independent replication. Source-byte verification, saved-data recomputation,
 and a new execution of the study are distinct checks.
 

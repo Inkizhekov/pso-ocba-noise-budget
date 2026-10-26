@@ -15,6 +15,8 @@ import time
 from typing import Callable
 from zipfile import ZipFile
 
+from research_integrity import selected_hashes
+
 
 ROOT = Path(__file__).resolve().parent
 MANIFEST = "reviewer_package_manifest.json"
@@ -135,13 +137,14 @@ def verify_archive(path: Path, destination: Path | None) -> dict:
             "full_primary_traces_included": False, "trace_examples": manifest["trace_examples"]}
 
 
-def verify_directory(root: Path) -> dict:
+def verify_directory(root: Path, *, strict_release: bool = False) -> dict:
     manifest = load_manifest((root / MANIFEST).read_bytes())
-    for name, expected in manifest["sha256"].items():
+    hashes = selected_hashes(manifest, strict_release=strict_release)
+    for name, expected in hashes.items():
         path = root / name
         if not path.resolve().is_relative_to(root.resolve()) or digest(path) != expected:
             raise ValueError(f"File checksum mismatch: {name}")
-    return {"files_verified": len(manifest["sha256"]),
+    return {"files_verified": len(hashes), "strict_release": strict_release,
             "ledger": check_ledger(lambda name: (root / name).read_bytes(), manifest),
             "full_primary_traces_included": False, "trace_examples": manifest["trace_examples"]}
 
@@ -286,6 +289,7 @@ def main() -> None:
     parser.add_argument("--archive", type=Path)
     parser.add_argument("--extract-to", type=Path)
     parser.add_argument("--recompute", action="store_true")
+    parser.add_argument("--strict-release", action="store_true", help="Also check release code and documentation bytes")
     parser.add_argument("--out", type=Path, help="New verification report directory")
     args = parser.parse_args()
     if args.extract_to is not None and args.archive is None:
@@ -303,7 +307,7 @@ def main() -> None:
             subprocess.run(command, cwd=target, check=True)
         print(json.dumps({**report, "elapsed_seconds": time.monotonic() - started}, indent=2))
         return
-    report = verify_directory(ROOT)
+    report = verify_directory(ROOT, strict_release=args.strict_release)
     output = args.out.resolve() if args.out else ROOT / "reviewer_checks" / time.strftime("check_%Y%m%d_%H%M%S")
     if output.exists():
         raise FileExistsError("Use a new verification output directory")

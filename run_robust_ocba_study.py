@@ -27,6 +27,12 @@ from run_ocba_study import load_real
 ROOT = Path(__file__).resolve().parent
 DEFAULT_OUT = ROOT / "results/ocba_current"
 NOISES = ("gaussian", "student_t3", "lognormal", "contaminated")
+NOISE_DISTRIBUTIONS = {
+    "gaussian": "N(0,1)",
+    "student_t3": "t(df=3)/sqrt(3)",
+    "lognormal": "(exp(N(0,1))-exp(1/2))/sqrt(e*(e-1))",
+    "contaminated": "(.95*N(0,1)+.05*N(0,100))/sqrt(5.95)",
+}
 SYNTH_METHODS = ("pso", "pso_ea", "pso_ocba_rs", "pso_ocba")
 NN_METHODS = ("pso", "pso_ea", "pso_ocba")
 NN_DATASETS = ("ionosphere", "sonar")
@@ -75,7 +81,10 @@ class RobustBenchmark(ControlledBenchmark):
         return truth + self.eta * (0.6 + 0.8 * float(x[0])) * float(noise)
 
     def metadata(self) -> dict:
-        return {**super().metadata(), "noise_family": self.noise,
+        return {**super().metadata(),
+                "noise": f"eta*(0.6+0.8*x[0])*({NOISE_DISTRIBUTIONS[self.noise]})",
+                "noise_distribution": NOISE_DISTRIBUTIONS[self.noise],
+                "noise_family": self.noise,
                 "noise_mean": 0, "noise_variance_before_heteroskedastic_factor": 1}
 
 
@@ -88,11 +97,7 @@ def protocol(smoke: bool = False) -> dict:
             "functions": FUNCTIONS, "dimension": 8, "swarms": SWARMS,
             "budgets": BUDGETS, "methods": SYNTH_METHODS, "runs": 30,
             "noise_conditions": [["gaussian", 0]] + [[n, eta] for n in NOISES for eta in [1, 2]],
-            "noise_distributions": {
-                "gaussian": "N(0,1)", "student_t3": "t(df=3)/sqrt(3)",
-                "lognormal": "(exp(N(0,1))-exp(1/2))/sqrt(e*(e-1))",
-                "contaminated": "(.95*N(0,1)+.05*N(0,100))/sqrt(5.95)",
-            },
+            "noise_distributions": dict(NOISE_DISTRIBUTIONS),
             "heteroskedastic_factor": "eta*(0.6+0.8*x[0])",
             "primary_family": "1296 two-sided OCBA-vs-PSO/EA comparisons, one global Holm",
             "secondary_family": "648 OCBA-vs-OCBA-RS comparisons, separate global Holm",
