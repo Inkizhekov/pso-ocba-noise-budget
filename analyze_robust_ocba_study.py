@@ -30,13 +30,32 @@ KEYS = ["dataset", "noise", "eta", "swarm", "budget"]
 NN_KEYS = ["dataset", "split_seed"]
 
 
+def benchmark_metadata_matches(saved: dict, expected: dict) -> bool:
+    if saved.keys() != expected.keys():
+        return False
+    for name, value in expected.items():
+        if name in {"rotation", "scale"}:
+            # QR and calibration reductions can differ by rounding across BLAS CPUs.
+            try:
+                actual, reference = np.asarray(saved[name]), np.asarray(value)
+                if (actual.shape != reference.shape
+                        or not np.issubdtype(actual.dtype, np.number)
+                        or not np.allclose(actual, reference, rtol=1e-12, atol=1e-14)):
+                    return False
+            except (ValueError, TypeError):
+                return False
+        elif saved[name] != value:
+            return False
+    return True
+
+
 def check_benchmark_metadata(benchmark: RobustBenchmark, saved: dict) -> bool:
-    if saved == benchmark.metadata():
+    if benchmark_metadata_matches(saved, benchmark.metadata()):
         return False
     # Initial archives inherited the Gaussian label even for other noise families.
     legacy = {**ControlledBenchmark.metadata(benchmark), "noise_family": benchmark.noise,
               "noise_mean": 0, "noise_variance_before_heteroskedastic_factor": 1}
-    if saved == legacy:
+    if benchmark_metadata_matches(saved, legacy):
         return True
     raise ValueError("Benchmark transformation or calibration changed")
 

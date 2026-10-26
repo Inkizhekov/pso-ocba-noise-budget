@@ -7,6 +7,7 @@ import tempfile
 import unittest
 
 import pandas as pd
+import numpy as np
 
 from analyze_robust_ocba_study import audit_job, check_benchmark_metadata
 from ocba_benchmarks import ControlledBenchmark
@@ -74,6 +75,21 @@ class ArchiveAuditTests(unittest.TestCase):
 
 
 class BenchmarkMetadataTests(unittest.TestCase):
+    def test_cpu_rounding_is_accepted_but_parameter_changes_are_rejected(self):
+        task = RobustBenchmark("sphere", 2, "gaussian")
+        metadata = task.metadata()
+        metadata["rotation"][0][0] = float(np.nextafter(metadata["rotation"][0][0], np.inf))
+        metadata["scale"] *= 1 + 5e-15
+        self.assertFalse(check_benchmark_metadata(task, metadata))
+        for field, value in (("scale", task.scale * (1 + 1e-7)),
+                             ("design_seed", task.design_seed + 1)):
+            with self.subTest(field=field):
+                with self.assertRaisesRegex(ValueError, "transformation or calibration"):
+                    check_benchmark_metadata(task, {**metadata, field: value})
+        metadata["rotation"][0][0] += 1e-7
+        with self.assertRaisesRegex(ValueError, "transformation or calibration"):
+            check_benchmark_metadata(task, metadata)
+
     def test_exact_current_and_legacy_metadata_are_supported(self):
         for noise in NOISES:
             with self.subTest(noise=noise):

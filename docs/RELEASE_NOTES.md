@@ -7,6 +7,10 @@
   regression checks for the public `legacy` and historical `--mode` interfaces.
 - Documented Git as a prerequisite for the full test suite and maintainer tools.
 - Added versioned software and unpublished-manuscript citation metadata.
+- Limited cross-CPU rounding tolerance to the recomputed QR rotation and
+  calibration scale in the trace auditor (`rtol=1e-12`, `atol=1e-14`). All
+  other benchmark metadata and archived-file checksums remain strict; the
+  separate reconstruction of selected true scores is still checked.
 - Prepared separate primary-data assets from the inventoried official jobs,
   excluding manuscript revisions, build history and unrelated technical runs.
 
