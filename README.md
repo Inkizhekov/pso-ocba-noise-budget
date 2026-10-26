@@ -2,6 +2,11 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
+[Scientific release v2026.10.27](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.10.27)
+provides a fixed reference for this repository. Use [CITATION.cff](CITATION.cff)
+to cite the software or accompanying unpublished manuscript. No journal
+publication or DOI (Digital Object Identifier) is claimed.
+
 GitHub browser-upload edition, 26 October 2026.
 The manuscripts include concise dataset descriptions and primary-source UCI citations. Numerical results are unchanged. Start with the verification commands below.
 All seven scientific series are represented by individual search results. Complete
@@ -79,6 +84,9 @@ true optimum is zero and negative scores closer to zero are better.
 ## Environment
 
 The recorded scientific environment uses Windows and Python 3.13.3.
+Git must also be installed to run the complete test suite and maintain release
+manifests. Check it with `git --version`. Data preparation and saved-result
+verification use Python and do not require Git.
 [requirements.txt](requirements.txt) pins the numerical dependencies:
 
 ```text
@@ -183,6 +191,15 @@ neural-network results and validated power plan. There are no current
 in code. Those options belong to the historical pilot interface.
 
 ## Resume and source integrity
+
+The original pilot remains available through the public entry point:
+
+```powershell
+.\.venv\Scripts\python.exe experiment.py legacy --help
+```
+
+The historical `--mode` interface is also supported. Relative output paths
+remain relative to the caller's working directory.
 
 After interruption, repeat the same command with the same output directory.
 Completed jobs are recognized by `complete.json`; an incomplete job can be
@@ -405,9 +422,12 @@ their bytes are identified by the Git commit. A GitHub-generated ZIP has no
 separately supplied `.zip.sha256` file in this repository.
 Download the whole repository with GitHub's Code / Download ZIP, extract it, then run prepare_data.py before verification.
 
-Verification writes new reports under `reviewer_checks`. The preserved full
-archive `ocba_reviewer_full_20261024.zip` is **not publicly hosted**. Its size,
-checksum and access status are stated in [data availability](docs/DATA_AVAILABILITY.md).
+Verification writes new reports under `reviewer_checks`. Complete primary
+observations for the official jobs are distributed separately as 15 ZIP assets
+in [release v2026.10.27](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.10.27).
+See [data availability](docs/DATA_AVAILABILITY.md) for checksums, phase selection
+and safe restoration with `verify_primary_traces.py`. The original full archive,
+which also contains development history, remains preserved locally.
 Nothing in this compact package claims external
 independent replication. Source-byte verification, saved-data recomputation,
 and a new execution of the study are distinct checks.

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -190,10 +191,15 @@ def main(argv: list[str] | None = None) -> int:
         if not explicit_legacy:
             print("Historical --mode detected; use 'experiment.py legacy' explicitly.",
                   file=sys.stderr)
-        command = [sys.executable, str(HISTORICAL_ROOT / "experiment.py")]
+        command = [sys.executable, "-m", "historical.ocba_20261022.experiment"]
         command.extend(arguments[1:] if explicit_legacy else arguments)
+        environment = os.environ.copy()
+        # Keep caller-relative output paths while making repository imports visible.
+        environment["PYTHONPATH"] = os.pathsep.join(
+            [str(ROOT), *filter(None, [environment.get("PYTHONPATH", "")])]
+        )
         try:
-            return subprocess.run(command, check=False).returncode
+            return subprocess.run(command, check=False, env=environment).returncode
         except KeyboardInterrupt:
             return 130
 

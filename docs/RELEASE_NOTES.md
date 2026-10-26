@@ -1,5 +1,19 @@
 # Repository corrections, 26 October 2026
 
+## Scientific release v2026.10.27
+
+- Fixed the historical command-line entry point, including invocation from
+  another directory and caller-relative output paths. Added subprocess
+  regression checks for the public `legacy` and historical `--mode` interfaces.
+- Documented Git as a prerequisite for the full test suite and maintainer tools.
+- Added versioned software and unpublished-manuscript citation metadata.
+- Prepared separate primary-data assets from the inventoried official jobs,
+  excluding manuscript revisions, build history and unrelated technical runs.
+
+The changes do not alter optimization rules or the recorded research results.
+
+## Initial repository corrections
+
 The preserved scientific CSV files, datasets, protocols, manuscript DOCX files
 and earlier release ZIP files have not been changed.
 
