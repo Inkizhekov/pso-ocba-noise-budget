@@ -4,9 +4,11 @@
 
 ## English manuscript and reproducibility
 
-[English article (PDF)](manuscripts/saj_20261121/article_en.pdf) | [Word](manuscripts/saj_20261121/article_en.docx) | [Supplement (PDF)](manuscripts/saj_20261121/supplement_en.pdf) | [Supplement (Word)](manuscripts/saj_20261121/supplement_en.docx)
+A. A. Inkizhekov (Katanov Khakass State University, Abakan) and L. A. Valuiskaya (Siberian State Medical University, Tomsk).
 
-The [21 November manuscript and calculation release](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21) contains the English
+[English article (PDF)](manuscripts/saj_20261122/article_en.pdf) | [Word](manuscripts/saj_20261122/article_en.docx) | [Supplement (PDF)](manuscripts/saj_20261122/supplement_en.pdf) | [Supplement (Word)](manuscripts/saj_20261122/supplement_en.docx)
+
+The [22 November manuscript release](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.22) contains the English
 preprint prepared for *Siberian Aerospace Journal*, the submission figures
 and a self-contained package to reproduce the new table. It is a preprint.
 Use [CITATION.cff](CITATION.cff) to cite this version.
@@ -30,6 +32,7 @@ See [data availability](docs/DATA_AVAILABILITY.md) for individual trace archives
 
 ## Other manuscript versions and documentation
 
+- [English manuscript and original analysis release, 21 November](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21).
 - [Russian article, October](manuscripts/revision_20261027/article_ru.docx), [PDF](manuscripts/revision_20261027/article_ru.pdf) and [Russian appendices](manuscripts/supplement_ru.pdf). The November decomposition appears in the English manuscript.
 - [English article, October](manuscripts/revision_20261027/article_en.pdf) and [English appendices, October](manuscripts/supplement_en.pdf).
 - [Russian experiment guide](docs/EXPERIMENT_GUIDE_RU.md), [source bibliography](docs/REFERENCES.md) and [dataset attribution and reuse](THIRD_PARTY_NOTICES.md).

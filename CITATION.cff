@@ -6,10 +6,10 @@ title: "PSO-OCBA noise and finite-budget experiments"
 authors:
   - family-names: Inkizhekov
     given-names: "A. A."
-date-released: "2026-11-21"
-version: "2026.11.21"
+date-released: "2026-11-22"
+version: "2026.11.22"
 repository-code: "https://github.com/Inkizhekov/pso-ocba-noise-budget"
-url: "https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21"
+url: "https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.22"
 keywords:
   - particle swarm optimization
   - optimal computing budget allocation
@@ -19,7 +19,11 @@ preferred-citation:
   type: unpublished
   authors:
     - family-names: Inkizhekov
-      given-names: "A. A."
+      given-names: "Anatolii Anatolyevich"
+      affiliation: "Katanov Khakass State University, Abakan, Russian Federation"
+    - family-names: Valuiskaya
+      given-names: "Larisa Anatolyevna"
+      affiliation: "Department of Medical and Biological Cybernetics, Siberian State Medical University, Tomsk, Russian Federation"
   title: "Repeated evaluations in particle swarm optimization on fixed functions under different noise distributions and budgets"
   year: 2026
-  url: "https://github.com/Inkizhekov/pso-ocba-noise-budget/blob/v2026.11.21/manuscripts/saj_20261121/article_en.pdf"
+  url: "https://github.com/Inkizhekov/pso-ocba-noise-budget/blob/v2026.11.22/manuscripts/saj_20261122/article_en.pdf"

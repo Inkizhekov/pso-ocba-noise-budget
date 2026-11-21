@@ -1,6 +1,6 @@
 # Data availability
 
-The [November manuscript and calculations](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21) include the exploratory decomposition of 2,880 saved validation searches. The [published per-search losses and eight contrasts](../results/ocba_visit_selection_20261121) reproduce Table 11. See the [analysis instructions](VISIT_SELECTION.md). The primary-data release is v2026.10.27.
+The [current English preprint by A. A. Inkizhekov and L. A. Valuiskaya](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.22) uses the November analysis. The [21 November manuscript and calculations](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21) include the exploratory decomposition of 2,880 saved validation searches. The [published per-search losses and eight contrasts](../results/ocba_visit_selection_20261121) reproduce Table 11. See the [analysis instructions](VISIT_SELECTION.md). The primary-data release is v2026.10.27.
 
 The public repository includes the individual results of all 126720 searches,
 input datasets, frozen protocols, power plans, statistical tables and three
@@ -105,7 +105,7 @@ Code and technical documentation use MIT; manuscripts, generated research
 outputs and third-party datasets have the separate scope described in
 [reuse information](../THIRD_PARTY_NOTICES.md).
 
-## Contrast definitions and current articles
+## Contrast definitions and October manuscripts
 
 The [contrast ledgers](CONTRAST_LEDGERS.md) export exact weights for the
 unchanged families of 23 and 72 mean contrasts. The additional exports and
