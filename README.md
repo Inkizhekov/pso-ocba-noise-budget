@@ -2,41 +2,46 @@
 
 [English](README.md) | [Русский](README.ru.md)
 
+## English manuscript and reproducibility
+
+[English article (PDF)](manuscripts/saj_20261121/article_en.pdf) | [Word](manuscripts/saj_20261121/article_en.docx) | [Supplement (PDF)](manuscripts/saj_20261121/supplement_en.pdf) | [Supplement (Word)](manuscripts/saj_20261121/supplement_en.docx)
+
+The [21 November manuscript and calculation release](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21) contains the English
+preprint prepared for *Siberian Aerospace Journal*, the submission figures
+and a self-contained package to reproduce the new table. It is a preprint.
+Use [CITATION.cff](CITATION.cff) to cite this version.
+
+The experiment compares repeated evaluations in particle swarm optimization
+(PSO) under equal objective-call budgets. Optimal computing budget allocation
+(OCBA) assigns additional observations to candidate points. The manuscript
+compares this policy with equal repeats and ordinary OCBA for choosing the
+global record.
+
+The new [visit and selection analysis](docs/VISIT_SELECTION.md) uses 2,880
+saved validation searches on 16 fixed instances. Under centered lognormal
+noise, the estimated gain over equal allocation splits into 0.6500 normalized
+units from the best point visited and 0.6476 from final selection. Table 11
+reports simultaneous intervals for all eight exploratory contrasts.
+
 [Scientific release v2026.10.27](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.10.27)
-provides a fixed reference for this repository. Use [CITATION.cff](CITATION.cff)
-to cite the software or accompanying unpublished manuscript. No journal
-publication or DOI (Digital Object Identifier) is claimed.
+contains the complete primary observations and protocol-matched sources.
+The repository includes per-search results from all seven scientific series.
+See [data availability](docs/DATA_AVAILABILITY.md) for individual trace archives.
 
-GitHub browser-upload edition, 26 October 2026.
-The manuscripts include concise dataset descriptions and primary-source UCI citations. Numerical results are unchanged. Start with the verification commands below.
-All seven scientific series are represented by individual search results. Complete
-primary observations are included only for three audit examples; this is not a full-trace archive.
+## Other manuscript versions and documentation
 
-This project studies when repeated evaluations improve Particle Swarm
-Optimization (PSO) under stochastic noise and a fixed number of objective
-calls. Optimal Computing Budget Allocation (OCBA) distributes additional
-evaluations among candidate solutions instead of allocating them uniformly.
+- [Russian article, October](manuscripts/revision_20261027/article_ru.docx), [PDF](manuscripts/revision_20261027/article_ru.pdf) and [Russian appendices](manuscripts/supplement_ru.pdf). The November decomposition appears in the English manuscript.
+- [English article, October](manuscripts/revision_20261027/article_en.pdf) and [English appendices, October](manuscripts/supplement_en.pdf).
+- [Russian experiment guide](docs/EXPERIMENT_GUIDE_RU.md), [source bibliography](docs/REFERENCES.md) and [dataset attribution and reuse](THIRD_PARTY_NOTICES.md).
+- [MIT license for code and technical documentation](LICENSE).
 
-The project implements a controlled empirical comparison of existing methods.
-It does not introduce a new optimizer or establish a universal applicability
-rule. The current manuscript is
-[article_vak_swarm_noise_ocba_datasets_20261025.docx](article_vak_swarm_noise_ocba_datasets_20261025.docx),
-with [supplementary appendices](article_vak_swarm_noise_ocba_supplement_datasets_20261025.docx)
-(appendices А-З in the Russian manuscript).
+Exact rational weights for the existing families of 23 and 72 mean contrasts
+are provided as [CSV and JSON ledgers](docs/CONTRAST_LEDGERS.md). With the pinned
+environment installed, verify their estimators without new searches:
 
-For a detailed walkthrough of the experiment, code, data formats, statistics,
-and troubleshooting, see the [Russian experiment guide](docs/EXPERIMENT_GUIDE_RU.md).
-
-## Manuscripts in both languages
-
-- [English article](article_vak_swarm_noise_ocba_english_20261026.docx) and [appendices A-H](article_vak_swarm_noise_ocba_supplement_english_20261026.docx).
-- [Russian article](article_vak_swarm_noise_ocba_datasets_20261025.docx) and [appendices](article_vak_swarm_noise_ocba_supplement_datasets_20261025.docx).
-- PDF reading copies: [English article](manuscripts/article_en.pdf), [English appendices](manuscripts/supplement_en.pdf), [Russian article](manuscripts/article_ru.pdf), [Russian appendices](manuscripts/supplement_ru.pdf).
-- [MIT License for code and technical documentation](LICENSE); see the separate scope for research materials below.
-- [Input attributions and reuse information](THIRD_PARTY_NOTICES.md).
-- [Bibliography](docs/REFERENCES.md).
-
-The English files translate the current Russian version. Results, limitations and editable equations are preserved. The two language versions are current deliverables, not revision history.
+```powershell
+.\.venv\Scripts\python.exe export_contrast_ledgers.py --check
+```
 
 ## Prepare the included results
 
@@ -387,8 +392,9 @@ This is the minimal review package. It includes the current manuscript and
 appendices, the English README and detailed Russian guide, current commented
 scientific code, pinned dependencies, the data underlying all 126720 searches,
 plans, statistical tables, record diagnostics, and three raw-trace examples.
-Older manuscripts, Word build history, revision logs, redundant archives,
-environments, and caches are excluded.
+The previously published manuscripts remain intact for the frozen reference;
+current articles are linked above. Word build history, revision logs, redundant
+archives, environments, and caches are excluded.
 
 The `historical` directory contains only three files required by existing
 Python imports, including the tabular neural-network objective. It is not

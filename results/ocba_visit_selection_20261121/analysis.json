@@ -1,0 +1,14 @@
+{
+  "critical_max_abs_t": 2.818052645360847,
+  "confidence": 0.95,
+  "family_size": 8,
+  "repetitions": 99999,
+  "seed": 21112026,
+  "status": "exploratory post-hoc fixed-instance diagnostic",
+  "contrast": "control loss minus PSO-OCBA loss; positive favors PSO-OCBA",
+  "searches": 2880,
+  "fixed_instances": 16,
+  "paired_runs_per_instance": 30,
+  "new_searches": 0,
+  "raw_traces_checked": true
+}

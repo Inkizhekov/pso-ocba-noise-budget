@@ -1,0 +1,26 @@
+{
+  "families": [
+    23,
+    72
+  ],
+  "all_estimators_match_existing_implementations": true,
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 1e-12,
+  "weights": "exact rational coefficients on cell means; 30 shared seeds per cell",
+  "rows": {
+    "23": 10368,
+    "72": 432
+  },
+  "input_sha256": {
+    "results/ocba_robustness_20261022/synthetic_runs.csv": "4864bdc8f7350d146fcb90dfcfb935bafaf08cc21202ff89ddb485c122b76188",
+    "results/ocba_n0_ablation_20261022/runs.csv": "fe071ae9c14510b77fe1101132a055e2680ca9f061150916748905f1839c4d09"
+  },
+  "files_sha256": {
+    "contrast_ledger_23.csv": "e4ee237f1490b5a07c0baa83da383e4aae817a7b68299a9634247a6fbf306604",
+    "contrast_ledger_23.json": "33c3882be343ff2de0f03acb83978b134adca7742b9e1c4b1f38fecfe92145ad",
+    "contrast_ledger_72.csv": "cabfdddc7e915f615d97326f06f86550d06927fec8b1d117025792d210118be5",
+    "contrast_ledger_72.json": "739299984b8e5a71ef6b8dcd37c9c73a2262ffbb35552c24a5902a376a1dbe13"
+  },
+  "new_searches": 0,
+  "existing_results_modified": false
+}

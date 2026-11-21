@@ -1,6 +1,6 @@
 # Data availability
 
-Scientific release: v2026.10.27.
+The [November manuscript and calculations](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/tag/v2026.11.21) include the exploratory decomposition of 2,880 saved validation searches. The [published per-search losses and eight contrasts](../results/ocba_visit_selection_20261121) reproduce Table 11. See the [analysis instructions](VISIT_SELECTION.md). The primary-data release is v2026.10.27.
 
 The public repository includes the individual results of all 126720 searches,
 input datasets, frozen protocols, power plans, statistical tables and three
@@ -18,10 +18,32 @@ archive's manifest; each job completion was also checked against
 `data/job_inventory.csv`. Old manuscripts, build scripts, development history
 and unrelated technical runs are excluded.
 
-The additional `scientific_sources_20261024.zip` asset preserves the original
-bytes of 26 scientific modules needed to identify the implementation behind
-the archived protocols. Its checksum is recorded in the primary-data manifest
-and `SHA256SUMS.txt`. It contains no earlier manuscripts or editorial builders.
+For protocol-bound source verification, use the corrected
+[scientific_sources_20261027.zip](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/download/v2026.10.27/scientific_sources_20261027.zip)
+and its [SHA-256 file](https://github.com/Inkizhekov/pso-ocba-noise-budget/releases/download/v2026.10.27/scientific_sources_20261027.sha256).
+The archive is 143176 bytes; its SHA-256 is
+`da8e41e5a98eabc8580506479397647acdf181c7d77e14e281a42a35b0def2fd`.
+It includes the exact 20261022 modules for original and expanded protocols,
+and the 20261024 modules for the ablation and new-instance protocols. Three
+historical modules missing from the earlier source asset are restored with
+their original protocol-matching hashes. No source-hash guard is bypassed.
+The earlier `scientific_sources_20261024.zip`, primary-data manifest and
+`SHA256SUMS.txt` remain unchanged; the new archive has its own checksum and
+internal `SOURCE_RECOVERY_MANIFEST.json`.
+
+Extract the corrected source archive into a separate directory. From there,
+use the pinned environment to run the included verification commands, replacing
+the example paths with your downloaded repository and assets:
+
+```powershell
+python verify_sources.py --repository D:/Review/pso-ocba-noise-budget-2026.10.27
+python audit_saved_phase.py --repository D:/Review/pso-ocba-noise-budget-2026.10.27 --assets D:/Review/assets --out D:/Review/pilot_audit --workers 2
+```
+
+The second command requires `primary_traces_12_nn_pilot.zip` and a new output
+directory. It runs the original analyzer with source verification enabled on
+144 saved jobs, 432 searches and 233280 evaluations; it does not retrain models.
+The archive's README describes the other phase choices.
 
 The source repository remains the compact review package. Downloading its
 source ZIP does not automatically download the primary-data release assets.
@@ -82,3 +104,12 @@ separately supplied `.zip.sha256` file in this repository.
 Code and technical documentation use MIT; manuscripts, generated research
 outputs and third-party datasets have the separate scope described in
 [reuse information](../THIRD_PARTY_NOTICES.md).
+
+## Contrast definitions and current articles
+
+The [contrast ledgers](CONTRAST_LEDGERS.md) export exact weights for the
+unchanged families of 23 and 72 mean contrasts. The additional exports and
+the revised article texts in `manuscripts/revision_20261027/` are identified
+by the accompanying repository manifests. They do not replace the scientific
+protocols, primary observations, saved estimates or release tag. Older
+manuscript files remain available for byte-level reference.

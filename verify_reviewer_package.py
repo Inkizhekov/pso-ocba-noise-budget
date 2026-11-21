@@ -180,6 +180,7 @@ def recompute(out: Path) -> dict:
     from analyze_ocba_scope import instance_tensor, run as scope_run
     from analyze_ocba_study import comparisons, validate_results
     from analyze_robust_ocba_study import audit_job, synthetic_analysis
+    from analyze_visit_selection import align as align_components, infer as infer_components
     from audit_ocba_hierarchy import run as hierarchy_run
     from audit_ocba_revision import run as independent_run
     from diagnose_ocba_traces import reconstruct_cell
@@ -228,6 +229,17 @@ def recompute(out: Path) -> dict:
         "mean", "se", "ci_low", "ci_high", "adjusted_p_zero")}} for i, name in enumerate(CONTRASTS)])
     report["instances"] = compare_frame(frame,
         pd.read_csv(ROOT / "results/ocba_instances_20261022/mean_contrasts.csv"), ["id"])
+    print("Checking eight exploratory visit and selection contrasts", flush=True)
+    components = ROOT / "results/ocba_visit_selection_20261121"
+    aligned = align_components(pd.read_csv(components / "search_components.csv",
+                                           float_precision="round_trip"))
+    estimates, inference = infer_components(aligned)
+    report["visit_selection"] = compare_frame(
+        estimates, pd.read_csv(components / "component_contrasts.csv"),
+        ["noise", "control", "component"])
+    recorded_inference = json.loads((components / "analysis.json").read_text(encoding="utf-8"))
+    for key in ("critical_max_abs_t", "seed", "family_size", "repetitions", "confidence"):
+        np.testing.assert_allclose(inference[key], recorded_inference[key], rtol=1e-10, atol=1e-12)
     print("Checking scope, MDE, and bootstrap sensitivity", flush=True)
     scope = out / "scope"
     report["scope"] = scope_run(scope)
